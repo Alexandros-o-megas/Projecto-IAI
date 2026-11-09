@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ambientes e editores
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporários, logs e dados locais
+*.log
+*.tmp
+*.bak
+outputs/*.inspect.ndjson
+work/

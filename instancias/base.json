@@ -1,0 +1,63 @@
+{
+  "tamanho": 6,
+  "linha_saida": 2,
+  "obstaculos": [],
+  "veiculos": [
+    {
+      "id": "A",
+      "orientacao": "H",
+      "comprimento": 2,
+      "fixa": 0,
+      "posicao": 0
+    },
+    {
+      "id": "B",
+      "orientacao": "V",
+      "comprimento": 2,
+      "fixa": 0,
+      "posicao": 4
+    },
+    {
+      "id": "C",
+      "orientacao": "H",
+      "comprimento": 2,
+      "fixa": 4,
+      "posicao": 4
+    },
+    {
+      "id": "O",
+      "orientacao": "V",
+      "comprimento": 3,
+      "fixa": 5,
+      "posicao": 0
+    },
+    {
+      "id": "P",
+      "orientacao": "V",
+      "comprimento": 3,
+      "fixa": 0,
+      "posicao": 1
+    },
+    {
+      "id": "Q",
+      "orientacao": "V",
+      "comprimento": 3,
+      "fixa": 3,
+      "posicao": 1
+    },
+    {
+      "id": "R",
+      "orientacao": "H",
+      "comprimento": 3,
+      "fixa": 5,
+      "posicao": 2
+    },
+    {
+      "id": "X",
+      "orientacao": "H",
+      "comprimento": 2,
+      "fixa": 2,
+      "posicao": 1
+    }
+  ]
+}

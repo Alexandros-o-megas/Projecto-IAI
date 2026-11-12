@@ -39,4 +39,15 @@ O problema é P6. A especificação oficial define os sete algoritmos, o IDA* co
 
 ## Estado
 
-Este repositório contém o esqueleto de colaboração e os materiais de planeamento. As pastas de implementação estão inicialmente vazias; preencher cada componente em ramos separados e integrar progressivamente.
+Este repositório contém os materiais de planeamento, a implementação do domínio P6 (`dominio.py`), a interface do problema e os nós de pesquisa (`problema.py`), a instância base (`instancias/base.json`) e os testes do domínio (`tests/test_dominio.py`). As convenções e dependências estão documentadas em [CONTRATO_DOMINIO.md](CONTRATO_DOMINIO.md), com aprovação colectiva e revisão por colega pendentes. Os restantes componentes da estrutura serão integrados progressivamente em ramos separados.
+
+## Domínio implementado por tarefas S02/S03/S09/S10
+Consultar CONTRATO_DOMINIO.md para convenções propostas e dependências.
+Executar a partir desta pasta:
+
+```sh
+python -m pytest -q
+python -c "from dominio import carregar_base; p=carregar_base(); print(p.estado_inicial()); print(p.accoes(p.estado_inicial()))"
+```
+
+As buscas, heurísticas h1/h2, menu e experiências aguardam os respectivos responsáveis.

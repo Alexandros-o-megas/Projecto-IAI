@@ -65,7 +65,7 @@ def ler_csv(nome):
 def testes():
     r = subprocess.run([sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider"], cwd=RAIZ,
                        capture_output=True, text=True)
-    return r.stdout.strip().splitlines()[-1]
+    return r.stdout.strip().splitlines()[-1].split(" in ")[0]
 
 
 def capa(doc):
@@ -83,8 +83,11 @@ def capa(doc):
                 substituir(par, DATA)
         elif el.tag.endswith("}tbl"):
             t = Table(el, doc)
-            for i, linha in enumerate(t.rows[1:]):
-                substituir(linha.cells[0].paragraphs[0], MEMBROS[i] if i < len(MEMBROS) else "")
+            for i, linha in enumerate(list(t.rows[1:])):
+                if i < len(MEMBROS):
+                    substituir(linha.cells[0].paragraphs[0], MEMBROS[i])
+                else:
+                    remover(linha._tr)   # 6.ª linha vazia (o grupo tem 5 membros)
 
 
 def pre_textuais(doc, R, D):

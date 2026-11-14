@@ -101,12 +101,12 @@ def introducao(w, R):
         "horas de ponta. Quando um chapa precisa de sair, é frequente ter de pedir a vários condutores que "
         "desloquem os seus veículos, numa ordem que nem sempre é evidente: mover primeiro o veículo errado "
         "pode bloquear a saída ainda mais. O problema atribuído ao Grupo 06 (P6) modela esta situação como "
-        "uma generalização do puzzle *Rush Hour*: num parque representado por uma grelha, cada veículo "
+        "uma generalização do puzzle ~Rush Hour~: num parque representado por uma grelha, cada veículo "
         "ocupa duas casas (carros) ou três (camiões), só se desloca na sua orientação e não pode atravessar "
         "outros veículos nem obstáculos fixos, como um carro da polícia estacionado. O objectivo é tirar o "
         "chapa X pela saída à direita da linha 3.")
     w.p("O problema é difícil porque o número de configurações cresce exponencialmente com o número de "
-        "veículos e o *Rush Hour* generalizado é PSPACE-completo (Flake & Baum, 2002). Resolver bem significa "
+        "veículos e o ~Rush Hour~ generalizado é PSPACE-completo (Flake & Baum, 2002). Resolver bem significa "
         "encontrar a sequência com o menor número de movimentos (menos pedidos aos condutores) ou com o "
         "menor esforço total, se mover um camião custar mais do que mover um carro. Estes dois critérios "
         "nem sempre levam à mesma solução, e o grupo mostra-o experimentalmente.")
@@ -116,7 +116,7 @@ def introducao(w, R):
         "experimentalmente, sete estratégias de busca na sua resolução.")
     w.h3("Objectivos específicos")
     w.lista(["Formular o problema (estado, acções, transição, custo e objectivo) com uma representação "
-             "compacta, imutável e *hashable*, para os dois critérios de optimização;",
+             "compacta, imutável e ~hashable~, para os dois critérios de optimização;",
              "Implementar de raiz BFS, DFS, IDS, Custo Uniforme, Gulosa, A* e IDA* com tabela de "
              "transposição sobre uma interface genérica;",
              "Propor heurísticas, provar (ou refutar) a sua admissibilidade e consistência e verificá-las "
@@ -129,7 +129,7 @@ def introducao(w, R):
         "de 35 tarefas (S01–S35) e um responsável por tarefa, documentado em "
         "`outputs/Grupo_06_Sprint_Scrum_6_Dias.pdf` e `outputs/Grupo_06_Quadro_Sprint.xlsx`. O código está "
         "num repositório Git partilhado (`Alexandros-o-megas/Projecto-IAI`), com um ramo por tarefa "
-        "(por exemplo `feature/lino/S02-S03-S09-S10`) integrado na `main` por *pull request* após revisão "
+        "(por exemplo `feature/lino/S02-S03-S09-S10`) integrado na `main` por ~pull request~ após revisão "
         "de outro membro. Primeiro fechou-se o contrato do domínio (`CONTRATO_DOMINIO.md`: convenção de "
         "saída, o que conta como movimento e custos), depois a interface comum e só então as buscas, "
         "heurísticas, gerador e experiências. A contribuição de cada membro está no Anexo B.")
@@ -149,8 +149,8 @@ def revisao(w):
         "acção c(s, a, s′) > 0 e um teste de objectivo (Russell & Norvig, 2021, cap. 3). Uma solução é uma "
         "sequência de acções de s0 até um estado objectivo, e é óptima se tiver o menor custo de caminho "
         "g. Os estados e as transições formam um grafo (o espaço de estados); a busca constrói uma árvore "
-        "de nós, em que cada nó guarda o estado, o pai, a acção, g e a profundidade. A *busca em árvore* "
-        "pode gerar o mesmo estado muitas vezes; a *busca em grafo* guarda um conjunto de estados "
+        "de nós, em que cada nó guarda o estado, o pai, a acção, g e a profundidade. A ~busca em árvore~ "
+        "pode gerar o mesmo estado muitas vezes; a ~busca em grafo~ guarda um conjunto de estados "
         "alcançados ou fechados para o evitar, à custa de memória. As estratégias comparam-se pela "
         "completude (encontra uma solução se existir), optimalidade (encontra a de menor custo) e "
         "complexidade em tempo e espaço, expressas em função do factor de ramificação b, da profundidade "
@@ -176,23 +176,23 @@ def revisao(w):
              larguras=[2.3, 4.2, 3.4, 3.2, 2.8])
     w.h2("Estratégias de busca informada e heurísticas")
     w.p("A busca informada usa uma função heurística h(n), que estima o custo de n até ao objectivo. A "
-        "**Gulosa** expande o nó de menor h: é rápida mas não óptima. O **A\\*** expande o nó de menor "
+        "**Gulosa** expande o nó de menor h: é rápida mas não óptima. O **A*** expande o nó de menor "
         "f(n) = g(n) + h(n) (Hart, Nilsson & Raphael, 1968). Uma heurística é **admissível** se "
         "h(n) ≤ h*(n) para todo n, em que h* é o custo óptimo real; é **consistente** se "
         "h(n) ≤ c(n, a, n′) + h(n′) para toda a transição e h(objectivo) = 0. Consistência implica "
         "admissibilidade e garante que o A* em grafo nunca precisa de reabrir nós fechados. Se "
         "h1(n) ≤ h2(n) para todo n, h2 **domina** h1 e o A* com h2 nunca expande mais nós (salvo "
-        "desempates). A qualidade mede-se pelo **factor de ramificação efectivo b\\***, que satisfaz "
+        "desempates). A qualidade mede-se pelo **factor de ramificação efectivo b***, que satisfaz "
         "N + 1 = 1 + b* + (b*)² + … + (b*)^d para N nós expandidos e solução de profundidade d. Boas "
         "heurísticas obtêm-se como custo exacto de um **problema relaxado** (com menos restrições) ou de "
         "bases de dados de padrões (Culberson & Schaeffer, 1998).")
     w.h2("Algoritmo avançado atribuído")
-    w.p("O **IDA\\*** (Korf, 1985) é o equivalente do IDS para busca informada: faz DFS em que um nó é "
+    w.p("O **IDA*** (Korf, 1985) é o equivalente do IDS para busca informada: faz DFS em que um nó é "
         "cortado quando f = g + h excede um limite; o limite inicial é h(s0) e, em cada nova iteração, "
         "passa a ser o menor f que excedeu o limite anterior. Com h admissível, a primeira solução "
         "encontrada é óptima, e a memória é linear na profundidade, ao contrário do A*, que guarda todos "
         "os nós gerados. O preço é re-expandir os mesmos nós em cada iteração e, sobretudo, não detectar "
-        "transposições: no *Rush Hour*, o mesmo estado é alcançado por muitas ordens de movimentos "
+        "transposições: no ~Rush Hour~, o mesmo estado é alcançado por muitas ordens de movimentos "
         "diferentes, e o IDA* simples explora cada uma delas.")
     w.p("A **tabela de transposição** (TT) (Reinefeld & Marsland, 1994) guarda, durante uma iteração, o "
         "menor g com que cada estado foi visitado. Se um estado reaparece com g′ ≥ g guardado, a subárvore "
@@ -220,14 +220,14 @@ DFS(n, limite):
         "distintos (cada valor distinto de f obriga a uma iteração) e a heurística é boa. Com custos "
         "variados (como o custo ponderado) o número de iterações aumenta, o que é visível nos resultados.")
     w.h2("Abordagens alternativas e trabalhos relacionados")
-    w.p("O *Rush Hour* clássico (6×6) foi resolvido de forma exaustiva: Collette, Raskin & Servais (2006) "
+    w.p("O ~Rush Hour~ clássico (6×6) foi resolvido de forma exaustiva: Collette, Raskin & Servais (2006) "
         "enumeraram todas as configurações e identificaram os puzzles mais difíceis (93 movimentos no "
         "critério de movimentos de um veículo de várias casas), usando BFS para trás a partir dos "
         "objectivos, a mesma ideia do nosso gerador. Em geral, o problema é PSPACE-completo (Flake & Baum, "
         "2002), pelo que não se espera um algoritmo polinomial. Alternativas à busca no espaço de estados "
         "são a formulação como planeamento clássico (PDDL) resolvida por planeadores com heurísticas "
         "independentes do domínio, a satisfação de restrições/SAT com horizonte limitado e as "
-        "metaheurísticas (algoritmos genéticos, *simulated annealing*), que encontram soluções mas sem "
+        "metaheurísticas (algoritmos genéticos, ~simulated annealing~), que encontram soluções mas sem "
         "garantia de optimalidade. Para tabuleiros até 8×8, a busca heurística óptima (A*/IDA*) é a "
         "escolha adequada: os espaços alcançáveis são da ordem de 10³ a 10⁶ estados e precisamos de "
         "soluções óptimas para os dois critérios.")
@@ -262,7 +262,7 @@ def formulacao(w, R):
         "mudam, a posição de referência determina todas as casas ocupadas por cada veículo, e a grelha "
         "pode ser reconstruída (`grelha(s)`). É **mínima**: guardar a grelha (n² caracteres) ou as casas "
         "ocupadas seria redundante, e cada veículo só tem um grau de liberdade. Como é um tuplo de "
-        "inteiros, é imutável e *hashable* e pode ser usado directamente em `set`/`dict` (fechados, "
+        "inteiros, é imutável e ~hashable~ e pode ser usado directamente em `set`/`dict` (fechados, "
         "tabela de transposição) com custo O(nº de veículos).")
     w.h2("Estado inicial")
     w.p(f"Na instância base, a ordem dos veículos é A, B, C, O, P, Q, R, X e o estado inicial é "
@@ -333,7 +333,7 @@ def heuristicas(w, R, D):
         "nos dois critérios, ao contrário de h2.")
     w.h2("Prova de admissibilidade")
     w.p("**Lema.** Em qualquer solução a partir de s, cada b ∈ B(s) é movido pelo menos uma vez e o seu "
-        "deslocamento total é ≥ m_b; X percorre pelo menos d_X casas. *Prova:* X só se move na linha r e "
+        "deslocamento total é ≥ m_b; X percorre pelo menos d_X casas. ~Prova:~ X só se move na linha r e "
         "não salta veículos, logo para chegar a x = n − 2 tem de ocupar sucessivamente todas as casas "
         "(r, x+2), …, (r, n−1). No momento em que X entra na casa ocupada inicialmente por b, b já não "
         "está na linha r; como b é vertical, isso exige deslocá-lo pelo menos m_b casas (os obstáculos "
@@ -433,7 +433,7 @@ def implementacao(w, R, D, GRAF):
              "inserção e evita comparar nós; recursão (pilha implícita) na DFS, IDS e IDA*.",
              "**Alcançados/fechados:** `set` de estados (tuplos) para teste de pertença em O(1) médio; "
              "`dict` `melhor_g` estado → menor g na fila de prioridade.",
-             "**Entradas obsoletas:** em vez de actualizar a prioridade dentro do *heap* (O(n)), insere-se "
+             "**Entradas obsoletas:** em vez de actualizar a prioridade dentro do ~heap~ (O(n)), insere-se "
              "uma nova entrada quando se encontra um g melhor e, ao retirar, descarta-se a entrada cujo g "
              "é maior do que `melhor_g[estado]` (descarte preguiçoso, O(log n) por operação).",
              "**Controlo de ciclos no caminho** (DFS, IDS, IDA*): `set` com os estados do caminho actual, "
@@ -441,7 +441,7 @@ def implementacao(w, R, D, GRAF):
              "**Tabela de transposição:** `dict` estado → menor g na iteração actual, limpo em cada iteração.",
              "**Reconstrução do caminho:** cada nó guarda o pai; `caminho(no)` segue os pais até à raiz "
              "(O(d)), sem copiar caminhos em cada nó.",
-             "**Domínio:** `resultado()` só verifica as casas atravessadas, com uma *cache* da ocupação do "
+             "**Domínio:** `resultado()` só verifica as casas atravessadas, com uma ~cache~ da ocupação do "
              "último estado (os algoritmos aplicam várias acções seguidas ao mesmo estado). Medimos uma "
              "redução de cerca de 5× no tempo por nó face à versão inicial, que regenerava todas as acções "
              "para validar cada uma."])
@@ -458,11 +458,11 @@ def implementacao(w, R, D, GRAF):
              "**IDS:** DFS limitada com limite 0, 1, 2, …; conta como re-expansão cada expansão de um estado "
              "já expandido numa iteração anterior; pára com “sem solução” quando uma iteração termina sem "
              "cortes.",
-             "**UCS / Gulosa / A\\*:** um único `_melhor_primeiro` parametrizado pela prioridade (g, h ou "
+             "**UCS / Gulosa / A*:** um único `_melhor_primeiro` parametrizado pela prioridade (g, h ou "
              "g + h) e com teste de objectivo **na expansão** (necessário para a optimalidade). O A* desempata "
              "f igual pelo maior g (mais perto do objectivo) e reabre nós fechados se encontrar g menor, o "
              "que só acontece com h2.",
-             "**IDA\\* (+TT):** recursivo, filhos ordenados por f crescente, controlo de ciclos no caminho e, "
+             "**IDA* (+TT):** recursivo, filhos ordenados por f crescente, controlo de ciclos no caminho e, "
              "na variante com tabela, poda por transposição; `idastar_simples` é a mesma função sem tabela, "
              "para medir a redução de nós (exigência específica 3)."])
     w.p("Excerto do A* (o código completo está no repositório e no Anexo C):")
@@ -508,7 +508,7 @@ def implementacao(w, R, D, GRAF):
     w.lista(["`test_dominio.py` (Lino): instância base, movimentos e imutabilidade, movimentos ilegais, saída, "
              "obstáculos, colisões, tabuleiro 8×8, `caminho()`;",
              "`test_buscas.py`: **sucessores de um estado conhecido** (as 11 acções de s0); óptimos da base "
-             "(8 e 40) com UCS, A* h0/h1/h3/h4 e IDA*; **A\\* e UCS devolvem o mesmo custo** em instâncias "
+             "(8 e 40) com UCS, A* h0/h1/h3/h4 e IDA*; **A* e UCS devolvem o mesmo custo** em instâncias "
              "geradas; BFS óptima em movimentos; **instância sem solução** em todos os algoritmos; limite da "
              "DFS; re-expansões do IDS; a TT reduz nós; Gulosa válida; limite de tempo; divergência dos "
              "critérios; cada solução é revalidada reaplicando as acções;",
@@ -599,23 +599,23 @@ def referencias(w):
     w.h1("REFERÊNCIAS BIBLIOGRÁFICAS")
     refs = [
         "Collette, S., Raskin, J.-F., & Servais, F. (2006). On the symbolic computation of the hardest "
-        "configurations of the Rush Hour game. In *Computers and Games* (Lecture Notes in Computer Science, "
+        "configurations of the Rush Hour game. In ~Computers and Games~ (Lecture Notes in Computer Science, "
         "Vol. 4630, pp. 220–233). Springer.",
-        "Culberson, J. C., & Schaeffer, J. (1998). Pattern databases. *Computational Intelligence, 14*(3), "
+        "Culberson, J. C., & Schaeffer, J. (1998). Pattern databases. ~Computational Intelligence, 14~(3), "
         "318–334.",
-        "Dijkstra, E. W. (1959). A note on two problems in connexion with graphs. *Numerische Mathematik, "
-        "1*(1), 269–271.",
+        "Dijkstra, E. W. (1959). A note on two problems in connexion with graphs. ~Numerische Mathematik, "
+        "1~(1), 269–271.",
         "Flake, G. W., & Baum, E. B. (2002). Rush Hour is PSPACE-complete, or “Why you should generously "
-        "tip parking lot attendants”. *Theoretical Computer Science, 270*(1–2), 895–911.",
+        "tip parking lot attendants”. ~Theoretical Computer Science, 270~(1–2), 895–911.",
         "Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination "
-        "of minimum cost paths. *IEEE Transactions on Systems Science and Cybernetics, 4*(2), 100–107.",
+        "of minimum cost paths. ~IEEE Transactions on Systems Science and Cybernetics, 4~(2), 100–107.",
         "Korf, R. E. (1985). Depth-first iterative-deepening: An optimal admissible tree search. "
-        "*Artificial Intelligence, 27*(1), 97–109.",
-        "Reinefeld, A., & Marsland, T. A. (1994). Enhanced iterative-deepening search. *IEEE Transactions "
-        "on Pattern Analysis and Machine Intelligence, 16*(7), 701–710.",
-        "Russell, S., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4.ª ed.). Pearson.",
-        "Universidade Eduardo Mondlane, Faculdade de Engenharia. (2026). *Projecto Prático 2026 — "
-        "Resolução de Problemas de Busca em Python* (enunciado de Inteligência Artificial I).",
+        "~Artificial Intelligence, 27~(1), 97–109.",
+        "Reinefeld, A., & Marsland, T. A. (1994). Enhanced iterative-deepening search. ~IEEE Transactions "
+        "on Pattern Analysis and Machine Intelligence, 16~(7), 701–710.",
+        "Russell, S., & Norvig, P. (2021). ~Artificial Intelligence: A Modern Approach~ (4.ª ed.). Pearson.",
+        "Universidade Eduardo Mondlane, Faculdade de Engenharia. (2026). ~Projecto Prático 2026 — "
+        "Resolução de Problemas de Busca em Python~ (enunciado de Inteligência Artificial I).",
     ]
     for r in refs:
         par = w.p(r)

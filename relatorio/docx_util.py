@@ -8,23 +8,26 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt
 
 
+MONO = "Courier New"   # existe no Windows; no Linux o LibreOffice usa Liberation Mono (mesmas métricas)
+
+
 class Escritor:
     def __init__(self, doc):
         self.doc = doc
 
     # ---------------------------------------------------------------- texto
     def _runs(self, par, texto):
-        """Suporta **negrito**, *itálico* e `código` simples."""
-        for parte in re.split(r"(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)", texto):
+        """Suporta **negrito**, ~itálico~ e `código`; um * isolado é literal (A*, h*)."""
+        for parte in re.split(r"(\*\*.+?\*\*|~[^~]+~|`[^`]+`)", texto):
             if not parte:
                 continue
             if parte.startswith("**"):
                 par.add_run(parte[2:-2]).bold = True
             elif parte.startswith("`"):
                 r = par.add_run(parte[1:-1])
-                r.font.name = "Consolas"
+                r.font.name = MONO
                 r.font.size = Pt(10)
-            elif parte.startswith("*") and len(parte) > 2:
+            elif parte.startswith("~") and len(parte) > 2:
                 par.add_run(parte[1:-1]).italic = True
             else:
                 par.add_run(parte)
@@ -60,8 +63,8 @@ class Escritor:
             par.paragraph_format.line_spacing = 1.0
             par.paragraph_format.first_line_indent = Cm(0)
             r = par.add_run(linha if linha else " ")
-            r.font.name = "Consolas"
-            r._element.rPr.rFonts.set(qn("w:eastAsia"), "Consolas")
+            r.font.name = MONO
+            r._element.rPr.rFonts.set(qn("w:eastAsia"), MONO)
             r.font.size = Pt(tamanho)
         self.doc.add_paragraph(style="Normal")
 
@@ -110,6 +113,7 @@ class Escritor:
                     r.font.size = Pt(tamanho)
         for row in t.rows:
             for c in row.cells:
+                c.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
                 pf = c.paragraphs[0].paragraph_format
                 pf.first_line_indent = Cm(0)
                 pf.space_after = Pt(0)

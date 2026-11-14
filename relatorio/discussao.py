@@ -40,17 +40,28 @@ def escrever(w, R, D, E):
             f"movimentos), a BFS resolveu {_resolvidas(E, 'grande', 'movimentos', 'bfs')} e o UCS "
             f"{_resolvidas(E, 'grande', 'ponderado', 'ucs')} no ponderado, contra "
             f"{_resolvidas(E, 'grande', 'ponderado', 'astar-h4')} do A* com h4 e "
-            f"{_resolvidas(E, 'grande', 'ponderado', 'gulosa-h2')} da Gulosa (h2). O comportamento confirma "
-            "a separação prevista: quando o número de estados a expandir aproxima o limite de 60 s, só as "
-            "estratégias informadas escalam, e mesmo o A* está perto do limite nas componentes maiores, "
-            "porque a sua memória cresce com o número de nós gerados (ver a coluna Memória).")
+            f"{_resolvidas(E, 'grande', 'ponderado', 'gulosa-h2')} da Gulosa (h2), enquanto DFS, IDS, IDA* simples "
+            "e IDA*+TT não resolveram nenhuma. **Ao contrário do previsto no enunciado (“só as informadas "
+            "terminam”), a BFS e o UCS ainda terminaram em todas as grandes**, com médias de "
+            f"{f(_res(E, 'grande', 'movimentos', 'bfs')[3], 1)} s e "
+            f"{f(_res(E, 'grande', 'ponderado', 'ucs')[3], 1)} s (máximo de 56 s no UCS). A razão é que só "
+            "expandem os estados mais próximos do início do que a solução (em média "
+            f"{f(_res(E, 'grande', 'movimentos', 'bfs')[2], 0)} na BFS), uma fracção pequena da componente. "
+            "Para os fazer falhar seriam precisas componentes de vários milhões de estados, que o nosso "
+            "gerador não consegue certificar por enumeração (Secção 7.2). Mesmo assim, a vantagem das "
+            "informadas mantém-se: no ponderado, o A* com h4 expande "
+            f"{pct(E['comum']('grande', 'ponderado', 'astar-h4', 'ucs')[0], 1)} dos nós do UCS e usa menos "
+            "memória, e a Gulosa resolve em cerca de um terço do tempo, embora com custos até 27 % acima "
+            "do óptimo.")
 
     # --- optimalidade
     bfs_p = _res(E, "media", "ponderado", "bfs")
     w.p("**Optimalidade.** UCS, A* (h0, h1, h3, h4) e IDA*+TT devolveram sempre o custo óptimo (Custo/óptimo "
-        "= 1,000), confirmando a teoria (h1, h3 e h4 são consistentes). O A* com h2 também foi óptimo em "
-        "todas as instâncias, apesar de h2 não ser admissível em movimentos: as sobrestimações são raras "
-        "e não aconteceram nos caminhos óptimos destas instâncias, mas não há garantia (Secção 4.2). A BFS "
+        "= 1,000), confirmando a teoria (h1, h3 e h4 são consistentes). O A* com h2 foi óptimo em todas as "
+        "instâncias menos uma: na `grande_05` (critério movimentos) devolveu uma solução de 31 movimentos, "
+        "quando o óptimo é 30. É a confirmação experimental de que h2 não é admissível em movimentos "
+        "(Secção 4.2): a sobrestimação fez o A* fechar o objectivo antes de expandir o caminho óptimo. No "
+        "ponderado, onde provámos h2 ≤ h4 ≤ h*, o A* com h2 foi sempre óptimo. A BFS "
         "é óptima em movimentos, mas no critério ponderado o custo médio foi "
         f"{f(df[(df.nivel == 'pequena') & (df.criterio == 'ponderado') & (df.config == 'bfs') & df.ok].custo.sum() / max(1, df[(df.nivel == 'pequena') & (df.criterio == 'ponderado') & (df.config == 'ucs') & df.ok].custo.sum()), 3)} "
         "vezes o óptimo nas pequenas: minimiza acções e não custo. A DFS devolve soluções muito piores "
@@ -161,13 +172,16 @@ def conclusoes(w, R, D, E):
     w.lista(["Nas instâncias pequenas o mínimo de 15 movimentos foi substituído pelo maior óptimo que "
              "DFS e IDS resolvem (6 a 8 movimentos), porque as duas exigências são incompatíveis com "
              "DFS/IDS de controlo de ciclos só no caminho (Secção 5.4).",
-             "Os tempos foram medidos com `tracemalloc` activo e com duas execuções em paralelo, num "
+             "Os tempos foram medidos com `tracemalloc` activo e com 2 a 3 execuções em paralelo, num "
              "portátil; os valores absolutos são indicativos, mas as contagens de nós são exactas e "
              "determinísticas.",
              "A implementação é em Python puro (≈ 10⁴ expansões/s); com o limite de 60 s, isso define a "
              "fronteira entre resolvido e falhou nas instâncias grandes.",
              "A h2 do enunciado não é admissível em movimentos; os resultados com h2 nesse critério não "
-             "têm garantia de óptimo, embora tenham coincidido com o óptimo."])
+             "têm garantia de óptimo, e numa instância grande (grande_05) o resultado não foi óptimo.",
+             "As instâncias grandes (290 000 a 780 000 estados) não chegaram para esgotar o tempo da BFS e do "
+             "UCS (só DFS, IDS e IDA* falharam): o gerador certifica o óptimo enumerando toda a componente, "
+             "o que limita as grandes a menos de 10⁶ estados com a memória disponível (cerca de 3 GB)."])
     w.h2("Trabalho futuro")
     w.lista(["Heurística por base de dados de padrões (pattern database) para o grupo de veículos à frente "
              "de X, que capture interacções entre bloqueadores, com prova de admissibilidade.",

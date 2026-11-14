@@ -60,23 +60,23 @@ def resumo(R, D):
     base = (f"Este relatório formula como problema de busca o P6, “Engarrafamento na Baixa”, uma "
             f"generalização do puzzle Rush Hour em que o chapa X tem de sair de um parque congestionado "
             f"pela saída à direita, com tabuleiros M×M até 8×8, obstáculos fixos e dois critérios de "
-            f"optimização: número de movimentos e custo ponderado (comprimento × casas). O estado é um "
-            f"tuplo imutável com a posição de cada veículo. Implementámos de raiz BFS, DFS, IDS, Custo "
+            f"optimização: número de movimentos e custo ponderado (comprimento × casas). Implementámos de raiz BFS, DFS, IDS, Custo "
             f"Uniforme, Gulosa, A* e IDA* com tabela de transposição sobre uma interface genérica, quatro "
             f"heurísticas (h1–h4) e um gerador de instâncias por busca para trás com a semente 202606. "
             f"Na instância base, com {m['estados']} estados alcançáveis, o óptimo é de {m['optimo']} "
             f"movimentos e custo ponderado {p['optimo']}, e os dois critérios coincidem; o gerador "
-            f"encontrou uma instância em que nenhuma solução de mínimo de movimentos é óptima no custo "
+            f"encontrou duas instâncias em que nenhuma solução de mínimo de movimentos é óptima no custo "
             f"ponderado. Provámos que a dica h2 não é admissível em movimentos (contra-exemplo com h2 = 4 "
             f"e h* = 3), mas é admissível no custo ponderado. ")
     if E:
         r_a, n_a = E["comum"]("media", "ponderado", "astar-h4", "ucs")
-        r_t, n_t = E["comum"]("media", "movimentos", "idastar-h4", "idastar_simples-h4")
+        r_t, n_t = E["comum"]("pequena", "movimentos", "idastar-h4", "idastar_simples-h4")
         base += (f"Nas instâncias médias, o A* com h4 expandiu em média {pct(1 - r_a, 1)} menos nós do que "
-                 f"o UCS no custo ponderado, e a tabela de transposição reduziu os nós do IDA* em "
+                 f"o UCS no custo ponderado, e nas pequenas a tabela de transposição reduziu os nós do IDA* em "
                  f"{pct(1 - r_t, 1)}. ")
     base += ("Concluímos que, para este problema, o A* com uma heurística consistente derivada de um "
-             "problema relaxado é a melhor escolha e que BFS/DFS/IDS só são viáveis em instâncias pequenas.")
+             "problema relaxado é a melhor escolha, que DFS e IDS só são viáveis em instâncias pequenas e que a "
+             "dica h2 pode devolver soluções não óptimas (observado numa instância grande).")
     return base
 
 
@@ -303,8 +303,9 @@ def formulacao(w, R):
         f"({pct(m['estados'], 160000)} do limite), com {m['transicoes']} transições. Num tabuleiro 8×8 "
         "com 15 veículos o limite ultrapassa 10¹², e as instâncias grandes geradas têm componentes de "
         "centenas de milhares de estados. Assim, BFS e UCS (que guardam todos os estados alcançados) "
-        "só são viáveis até 10⁵–10⁶ estados, e DFS/IDS (busca em árvore, O(b^d) com b ≈ 5 a 11) só com "
-        "soluções curtas (d ≲ 8); para as instâncias grandes são precisas heurísticas (Capítulo 6).")
+        "só são viáveis enquanto os estados com distância < d ao início couberem no limite de tempo "
+        "(da ordem de 10⁵ estados em 60 s, em Python), e DFS/IDS (busca em árvore, O(b^d) com b ≈ 5 a 11) "
+        "só com soluções curtas (d ≲ 8). As heurísticas reduzem o número de estados expandidos (Capítulo 6).")
 
 
 def heuristicas(w, R, D):
@@ -410,8 +411,8 @@ X X B . A   → saída
              linhas, tamanho=8)
     w.p("d é o nº de movimentos da solução encontrada pelo A*; b* calcula-se com N = nós expandidos. "
         "“—” indica que a execução excedeu 60 s. No critério movimentos, h2 expande menos nós do que h3/h4 "
-        "porque é maior (e por vezes sobrestima); só não perde a optimalidade nas instâncias geradas porque "
-        "as sobrestimações são raras. h3 e h4 coincidem em movimentos. No critério ponderado, h4 é a mais "
+        "porque é maior e por vezes sobrestima; na `grande_05` isso fez o A* com h2 devolver 31 movimentos "
+        "quando o óptimo é 30. h3 e h4 coincidem em movimentos. No critério ponderado, h4 é a mais "
         "informada e a única que reduz claramente o b*.")
 
 
@@ -548,8 +549,8 @@ def tabela_nivel(w, D, nivel, criterio):
                        f(r.custo_medio, 1), f(r.custo_optimo, 3), f(r.expandidos, 0), f(r.gerados, 0),
                        f(r.fronteira_max, 0), f(r.tempo_s, 3), f(r.memoria_mb, 2)])
     w.tabela(f"Resultados médios por algoritmo — instâncias {NIVEL[nivel]}, critério {criterio}",
-             ["Algoritmo", "Heur.", "Resolvidas", "Custo médio", "Custo / óptimo", "Nós expandidos",
-              "Nós gerados", "Fronteira máx.", "Tempo (s)", "Memória (MB)"], linhas, tamanho=7.5)
+             ["Algoritmo", "Heur.", "Resolvidas", "Custo médio", "Custo / óptimo", "Nós exp.",
+              "Nós ger.", "Fronteira máx.", "Tempo (s)", "Memória (MB)"], linhas, tamanho=7.5)
 
 
 def experiencias(w, R, D, E, GRAF):
@@ -564,7 +565,8 @@ def experiencias(w, R, D, E, GRAF):
         f"cada critério (movimentos e ponderado) correram 13 configurações: BFS, DFS (limite 50), IDS, UCS, "
         f"Gulosa (h1, h2), A* (h0, h1, h2, h3, h4), IDA* simples (h4) e IDA*+TT (h4), num total de "
         f"{E.get('execucoes', 0)} execuções. Cada execução corre num processo novo, com limite de memória "
-        f"de 2 GB (`RLIMIT_AS`) e de 60 s (prazo verificado dentro do algoritmo); as que excedem os limites "
+        f"de 2 GB (`RLIMIT_AS`) e de 60 s (prazo verificado dentro do algoritmo), com 2 execuções em paralelo "
+        f"nas pequenas e médias e 3 nas grandes; as que excedem os limites "
         f"aparecem como “falhou (tempo)” ou “falhou (memória)”. Mede-se o tempo com `time.perf_counter` e "
         f"a memória de pico com `tracemalloc` (o tempo inclui a sobrecarga do tracemalloc, igual para "
         f"todos). As contagens de nós são determinísticas, por isso basta uma repetição; o tempo de uma "

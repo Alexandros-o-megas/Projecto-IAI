@@ -286,9 +286,10 @@ def graficos(df):
                 ("tempo_s", "Tempo (s, escala log)", "tempo_vs_tamanho", True)]:
             fig, ax = plt.subplots(figsize=(8, 5))
             for c in seleccao:
-                pts = s[s.config == c].groupby("d")[metrica].mean()
-                if len(pts):
-                    ax.plot(pts.index, pts.values, marker=marcadores[c], label=c, alpha=.85)
+                pts = s[s.config == c]
+                if len(pts):   # um ponto por instância resolvida (sem linhas: instâncias diferentes)
+                    ax.plot(pts.d, pts[metrica], linestyle="none", marker=marcadores[c], label=c,
+                            alpha=.75, markersize=6)
             ax.set_yscale("log" if log else "linear")
             ax.set_xlabel("Tamanho da instância: profundidade óptima d (nº de movimentos)")
             ax.set_ylabel(rotulo)
@@ -300,9 +301,13 @@ def graficos(df):
             plt.close(fig)
         # custo obtido vs. custo óptimo
         fig, ax = plt.subplots(figsize=(6.5, 6))
-        for c in ["bfs", "dfs", "gulosa-h1", "gulosa-h2", "astar-h4", "idastar-h4"]:
+        for c, mk, cor in [("bfs", "o", "tab:blue"), ("dfs", "s", "tab:orange"),
+                           ("gulosa-h1", "^", "tab:green"), ("gulosa-h2", "v", "tab:red"),
+                           ("astar-h4", "P", "tab:purple"), ("idastar-h4", "x", "black")]:
             pts = s[s.config == c]
-            ax.scatter(pts.optimo, pts.custo, label=c, alpha=.7, s=22)
+            oco = mk in "os^v"
+            ax.scatter(pts.optimo, pts.custo, label=c, s=34, marker=mk, linewidths=1.3,
+                       facecolors="none" if oco else cor, edgecolors=cor if oco else None)
         lim = [0, max(s.custo.max(), s.optimo.max()) * 1.05]
         ax.plot(lim, lim, "k--", lw=1, label="custo = óptimo")
         ax.set_xlabel("Custo óptimo")

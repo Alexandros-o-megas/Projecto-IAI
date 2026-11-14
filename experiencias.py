@@ -107,7 +107,7 @@ def bateria(niveis, workers, tempo, saida, anexar=False):
             for alg, heur in CONFIGURACOES:
                 tarefas.append((nivel, f, criterio, alg, heur))
     print(f"{len(tarefas)} execuções, {workers} processo(s), limite {tempo}s / 2 GB")
-    ctx = get_context("fork")
+    ctx = get_context("forkserver")
     linhas = []
     with ProcessPoolExecutor(workers, mp_context=ctx, initializer=_limitar_memoria,
                              max_tasks_per_child=1) as pool:

@@ -39,7 +39,7 @@ NIVEIS = {
     "media":   dict(tamanhos=(6, 7), veiculos=(9, 14), obstaculos=(0, 2), limite=40_000,
                     min_mov=15, min_estados=3_000, max_estados=40_000),
     "grande":  dict(tamanhos=(7, 8), veiculos=(10, 22), obstaculos=(0, 3), limite=800_000,
-                    min_mov=15, min_estados=250_000, max_estados=800_000),
+                    min_mov=15, min_estados=250_000, max_estados=800_000, por_indice=True),
 }
 ORCAMENTO_NOS = 300_000
 
@@ -78,30 +78,30 @@ def configuracao_objectivo(rng, n, n_veiculos, n_obst):
     return RushHour(n, veiculos, posicoes, obst, r)
 
 
-def distancias(p, limite):  # noqa: C901
+def distancias(p, limite):
     """Componente do estado inicial de p (que é um objectivo) e distância em
-    movimentos de cada estado ao objectivo mais próximo. None se exceder limite."""
-    vizinhos = {}
-    fila = deque([p.estado_inicial()])
-    vizinhos[p.estado_inicial()] = None
-    # 1) enumerar a componente; os objectivos não têm acções em p.accoes, por
-    #    isso geramos os vizinhos com um problema "sem objectivo terminal".
+    movimentos de cada estado ao objectivo mais próximo. None se exceder limite.
+    Duas passagens (sem guardar listas de vizinhos) para poupar memória."""
+    # 1) enumerar a componente (accoes_todas: também se sai dos objectivos)
+    componente = {p.estado_inicial()}
+    fila = deque(componente)
     while fila:
         s = fila.popleft()
-        lista = [p.aplicar(s, a) for a in p.accoes_todas(s)]
-        vizinhos[s] = lista
-        for s2 in lista:
-            if s2 not in vizinhos:
-                vizinhos[s2] = None
+        for a in p.accoes_todas(s):
+            s2 = p.aplicar(s, a)
+            if s2 not in componente:
+                componente.add(s2)
                 fila.append(s2)
-                if len(vizinhos) > limite:
+                if len(componente) > limite:
                     return None
-    # 2) BFS multi-origem a partir de todos os objectivos
-    dist = {s: 0 for s in vizinhos if p.e_objectivo(s)}
+    # 2) BFS multi-origem a partir de todos os objectivos da componente
+    dist = {s: 0 for s in componente if p.e_objectivo(s)}
+    del componente
     fila = deque(dist)
     while fila:
         s = fila.popleft()
-        for s2 in vizinhos[s]:
+        for a in p.accoes_todas(s):
+            s2 = p.aplicar(s, a)
             if s2 not in dist:
                 dist[s2] = dist[s] + 1
                 fila.append(s2)
@@ -143,13 +143,9 @@ def _escolher_exacto(rng, p, cfg, nivel):
     return None
 
 
-def gerar(nivel, quantidade, semente=SEMENTE, min_mov=None, verbose=False):
-    cfg = dict(NIVEIS[nivel])
-    if min_mov is not None:
-        cfg["min_mov"] = min_mov
-    rng = random.Random(f"{semente}-{nivel}")
-    vistos, puzzles, tentativas = set(), [], 0
-    while len(puzzles) < quantidade:
+def _procurar(rng, cfg, nivel, vistos, verbose, rotulo):
+    tentativas = 0
+    while True:
         tentativas += 1
         n = rng.choice(cfg["tamanhos"])
         p = configuracao_objectivo(rng, n, rng.randint(*cfg["veiculos"]), rng.randint(*cfg["obstaculos"]))
@@ -161,18 +157,33 @@ def gerar(nivel, quantidade, semente=SEMENTE, min_mov=None, verbose=False):
         if chave in vistos:
             continue
         vistos.add(chave)
-        puzzles.append((q, d, n_estados))
         if verbose:
-            print(f"{nivel} #{len(puzzles)}: {q.tamanho}x{q.tamanho}, {len(q.veiculos)} veículos, "
+            print(f"{nivel} #{rotulo}: {q.tamanho}x{q.tamanho}, {len(q.veiculos)} veículos, "
                   f"{len(q.obstaculos)} obstáculos, óptimo {d} mov., componente {n_estados} estados "
                   f"(tentativa {tentativas})", flush=True)
-    return puzzles
+        return q, d, n_estados
 
 
-def gravar(nivel, puzzles, semente=SEMENTE, pasta=PASTA):
+def gerar(nivel, quantidade, semente=SEMENTE, min_mov=None, verbose=False, indices=None):
+    """Gera `quantidade` puzzles. Nos níveis com por_indice=True (grande), a
+    instância i usa a sua própria sequência Random("<semente>-<nível>-<i>"),
+    o que permite gerar índices em paralelo sem perder a reprodutibilidade."""
+    cfg = dict(NIVEIS[nivel])
+    if min_mov is not None:
+        cfg["min_mov"] = min_mov
+    vistos = set()
+    if cfg.get("por_indice"):
+        indices = indices or range(1, quantidade + 1)
+        return [_procurar(random.Random(f"{semente}-{nivel}-{i}"), cfg, nivel, vistos, verbose, i)
+                for i in indices]
+    rng = random.Random(f"{semente}-{nivel}")
+    return [_procurar(rng, cfg, nivel, vistos, verbose, k + 1) for k in range(quantidade)]
+
+
+def gravar(nivel, puzzles, semente=SEMENTE, pasta=PASTA, indices=None):
     pasta.mkdir(exist_ok=True)
     caminhos = []
-    for i, (q, d, n_estados) in enumerate(puzzles, 1):
+    for i, (q, d, n_estados) in zip(indices or range(1, len(puzzles) + 1), puzzles):
         f = pasta / f"{nivel}_{i:02d}.json"
         meta = {"nivel": nivel, "semente": semente, "optimo_movimentos": d,
                 "estados_componente": n_estados}
@@ -187,10 +198,12 @@ def main():
     ap.add_argument("--quantidade", type=int, default=10)
     ap.add_argument("--semente", type=int, default=SEMENTE)
     ap.add_argument("--min-mov", type=int, default=None, help="sobrepõe o mínimo do nível")
+    ap.add_argument("--indices", type=int, nargs="*", help="só estes índices (níveis por índice, p.ex. grande)")
     a = ap.parse_args()
     for nivel in (NIVEIS if a.nivel == "todos" else [a.nivel]):
-        puzzles = gerar(nivel, a.quantidade, a.semente, a.min_mov, verbose=True)
-        gravar(nivel, puzzles, a.semente)
+        indices = a.indices if NIVEIS[nivel].get("por_indice") else None
+        puzzles = gerar(nivel, a.quantidade, a.semente, a.min_mov, verbose=True, indices=indices)
+        gravar(nivel, puzzles, a.semente, indices=indices)
 
 
 if __name__ == "__main__":

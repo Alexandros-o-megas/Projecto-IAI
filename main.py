@@ -41,24 +41,76 @@ def gerar(nivel, semente, criterio):
     return q.com_criterio(criterio)
 
 
-def mostrar(p, r, passo_a_passo=True):
-    print(f"\n=== {NOMES.get(r.algoritmo, r.algoritmo)} "
-          f"{'(' + r.extra['heuristica'] + ')' if 'heuristica' in r.extra else ''} — critério {p.criterio} ===")
+# ---------------------------------------------------------------- cores (ANSI)
+COR = {"ativo": sys.stdout.isatty()}
+PALETA = [31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96]
+
+
+def c(texto, codigo):
+    return f"\033[{codigo}m{texto}\033[0m" if COR["ativo"] else texto
+
+
+def desenhar_cor(p, s, movido=None):
+    """Tabuleiro com cores: X a vermelho e fundo, veículo movido em destaque,
+    camiões em negrito, obstáculos (#) a cinzento, saída assinalada."""
+    if not COR["ativo"]:
+        return p.desenhar(s)
+    cores = {}
+    outros = [v.id for v in p.veiculos if v.id != "X"]
+    for i, vid in enumerate(outros):
+        cores[vid] = str(PALETA[i % len(PALETA)])
+    linhas = []
+    for r, linha in enumerate(p.grelha(s)):
+        casas = []
+        for x in linha:
+            if x == ".":
+                casas.append(c("·", "2"))
+            elif x == "#":
+                casas.append(c("#", "90;1"))
+            elif x == "X":
+                casas.append(c("X", "97;41;1"))
+            elif x == movido:
+                casas.append(c(x, "30;43;1"))      # destaque amarelo: veículo que acabou de mexer
+            else:
+                L = p.veiculos[p.indice(x)].comprimento
+                casas.append(c(x, cores[x] + (";1" if L == 3 else "")))
+        texto = " ".join(casas)
+        if r == p.linha_saida:
+            texto += c("  ⟶ saída", "92;1")
+        linhas.append(texto)
+    return "\n".join(linhas)
+
+
+def mostrar(p, r, passo_a_passo=True, pausa=0.0, limpar=False):
+    import time
+    print(c(f"\n=== {NOMES.get(r.algoritmo, r.algoritmo)} "
+            f"{'(' + r.extra['heuristica'] + ')' if 'heuristica' in r.extra else ''} — critério {p.criterio} ===",
+            "1;36"))
     if r.estado != "ok":
-        print(f"Sem solução: {r.estado}")
+        print(c(f"Sem solução: {r.estado}", "1;31"))
     else:
         estados, accoes = r.estados(), r.accoes()
         if passo_a_passo:
-            print("\nEstado inicial:")
-            print(p.desenhar(estados[0]))
+            sentido = {("H", 1): "direita →", ("H", -1): "esquerda ←", ("V", 1): "baixo ↓", ("V", -1): "cima ↑"}
+            total = 0
+            if limpar and COR["ativo"]:
+                print("\033[2J\033[H", end="")
+            print(c("\nEstado inicial:", "1"))
+            print(desenhar_cor(p, estados[0]))
             for i, (a, s) in enumerate(zip(accoes, estados[1:]), 1):
-                sentido = {("H", 1): "direita", ("H", -1): "esquerda", ("V", 1): "baixo", ("V", -1): "cima"}
+                if pausa:
+                    time.sleep(pausa)
+                if limpar and COR["ativo"]:
+                    print("\033[2J\033[H", end="")
                 v = p.veiculos[p.indice(a.veiculo)]
-                print(f"\nPasso {i}: mover {a.veiculo} {abs(a.deslocamento)} casa(s) para "
-                      f"{sentido[(v.orientacao, 1 if a.deslocamento > 0 else -1)]} "
-                      f"(custo {p.custo_accao(a)})")
-                print(p.desenhar(s))
-        print("\nSolução:", " ".join(f"{a.veiculo}{a.deslocamento:+d}" for a in accoes))
+                total += p.custo_accao(a)
+                print(f"\n{c(f'Passo {i}/{len(accoes)}', '1')}: mover {c(a.veiculo, '30;43;1')} "
+                      f"{abs(a.deslocamento)} casa(s) para {sentido[(v.orientacao, 1 if a.deslocamento > 0 else -1)]} "
+                      f"(custo {p.custo_accao(a)}, acumulado {total})")
+                print(desenhar_cor(p, s, a.veiculo))
+            if p.e_objectivo(estados[-1]):
+                print(c("\nO chapa X chegou à saída!", "1;32"))
+        print(c("\nSolução:", "1"), " ".join(f"{a.veiculo}{a.deslocamento:+d}" for a in accoes))
     print("\nMétricas:")
     for nome, valor in [("estado", r.estado), ("custo da solução", r.custo),
                         ("comprimento (movimentos)", r.comprimento), ("nós expandidos", r.expandidos),
@@ -71,7 +123,7 @@ def mostrar(p, r, passo_a_passo=True):
         print(f"  {'podas pela tabela':26s} {r.extra['podas_tabela']}")
 
 
-def resolver(p, alg, heur, tempo, limite_dfs, passo_a_passo=True):
+def resolver(p, alg, heur, tempo, limite_dfs, passo_a_passo=True, pausa=0.0, limpar=False):
     import time
     import tracemalloc
     sys.setrecursionlimit(20000)
@@ -81,7 +133,7 @@ def resolver(p, alg, heur, tempo, limite_dfs, passo_a_passo=True):
     r.extra["tempo"] = time.perf_counter() - t0
     r.extra["memoria"] = tracemalloc.get_traced_memory()[1] / 2 ** 20
     tracemalloc.stop()
-    mostrar(p, r, passo_a_passo)
+    mostrar(p, r, passo_a_passo, pausa, limpar)
     return r
 
 
@@ -103,8 +155,8 @@ def menu():
     criterio = "movimentos"
     p = carregar_base(criterio)
     while True:
-        print("\nInstância actual:")
-        print(p.desenhar(p.estado_inicial()))
+        print(c("\nInstância actual:", "1"))
+        print(desenhar_cor(p, p.estado_inicial()))
         print(f"Critério: {p.criterio}")
         op = escolher("Menu", {"resolver": "escolher algoritmo, heurística e limites e resolver",
                                "ficheiro": "carregar instância de ficheiro JSON",
@@ -138,7 +190,8 @@ def menu():
                 if alg == "dfs":
                     limite = int(input("Limite de profundidade do DFS [50]: ").strip() or 50)
                 passo = input("Mostrar passo a passo? [S/n]: ").strip().lower() != "n"
-                resolver(p, alg, heur, tempo, limite, passo)
+                pausa = float(input("Pausa entre passos em segundos [1]: ").strip() or 1) if passo else 0
+                resolver(p, alg, heur, tempo, limite, passo, pausa, limpar=pausa > 0)
         except (ValueError, OSError, IndexError, KeyError) as e:
             print("Erro:", e)
 
@@ -154,12 +207,19 @@ def main():
     ap.add_argument("--tempo", type=float, default=60)
     ap.add_argument("--limite-dfs", type=int, default=50)
     ap.add_argument("--sem-passos", action="store_true", help="mostrar só a solução e as métricas")
+    ap.add_argument("--pausa", type=float, default=0.0,
+                    help="segundos entre passos (animação), p.ex. --pausa 1")
+    ap.add_argument("--animar", action="store_true", help="limpar o ecrã a cada passo (usar com --pausa)")
+    ap.add_argument("--sem-cor", action="store_true", help="desligar as cores ANSI")
     a = ap.parse_args()
+    if a.sem_cor:
+        COR["ativo"] = False
     if a.alg is None:
         menu()
         return
     p = gerar(a.gerar, a.semente, a.criterio) if a.gerar else carregar(a.instancia, a.criterio)
-    resolver(p, a.alg, a.h if a.alg in INFORMADOS else None, a.tempo, a.limite_dfs, not a.sem_passos)
+    resolver(p, a.alg, a.h if a.alg in INFORMADOS else None, a.tempo, a.limite_dfs, not a.sem_passos,
+             a.pausa, a.animar)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,807 @@
+nivel,instancia,tamanho,veiculos,obstaculos,optimo_mov_gerador,criterio,algoritmo,heuristica,estado,custo,comprimento,expandidos,gerados,fronteira_max,reexpandidos,iteracoes,podas_tabela,tempo_s,memoria_mb
+base,base,6,8,0,,movimentos,bfs,—,ok,8,8,980,10873,272,0,0,,0.1716,0.237
+base,base,6,8,0,,movimentos,dfs,—,ok,50,50,110050,1206459,51,0,0,,22.4933,0.094
+base,base,6,8,0,,movimentos,ids,—,falhou (tempo),,,341533,3990083,8,340724,8,,60.0029,0.147
+base,base,6,8,0,,movimentos,ucs,—,ok,8,8,1057,11571,272,0,0,,0.1625,0.298
+base,base,6,8,0,,movimentos,gulosa,h1,ok,9,9,135,1438,427,0,0,,0.033,0.249
+base,base,6,8,0,,movimentos,gulosa,h2,ok,8,8,34,382,181,0,0,,0.0134,0.106
+base,base,6,8,0,,movimentos,astar,h0,ok,8,8,1057,11571,272,0,0,,0.1697,0.355
+base,base,6,8,0,,movimentos,astar,h1,ok,8,8,783,8692,530,0,0,,0.1482,0.494
+base,base,6,8,0,,movimentos,astar,h2,ok,8,8,357,4040,633,0,0,,0.0856,0.518
+base,base,6,8,0,,movimentos,astar,h3,ok,8,8,530,5915,487,0,0,,0.1046,0.46
+base,base,6,8,0,,movimentos,astar,h4,ok,8,8,530,5915,487,0,0,,0.1197,0.46
+base,base,6,8,0,,movimentos,idastar_simples,h4,ok,8,8,41423,468942,9,40873,6,0,20.1508,0.136
+base,base,6,8,0,,movimentos,idastar,h4,ok,8,8,1948,22024,9,1398,6,5294,0.9955,0.199
+base,base,6,8,0,,ponderado,bfs,—,ok,40,8,980,10873,272,0,0,,0.1608,0.236
+base,base,6,8,0,,ponderado,dfs,—,ok,122,50,110050,1206459,51,0,0,,22.1266,0.093
+base,base,6,8,0,,ponderado,ids,—,falhou (tempo),,,344253,4022804,8,343439,8,,60.0022,0.147
+base,base,6,8,0,,ponderado,ucs,—,ok,40,8,1071,11683,341,0,0,,0.1676,0.329
+base,base,6,8,0,,ponderado,gulosa,h1,ok,40,9,135,1438,427,0,0,,0.0334,0.248
+base,base,6,8,0,,ponderado,gulosa,h2,ok,40,8,34,382,181,0,0,,0.0125,0.105
+base,base,6,8,0,,ponderado,astar,h0,ok,40,8,1071,11683,341,0,0,,0.1709,0.395
+base,base,6,8,0,,ponderado,astar,h1,ok,40,8,1069,11668,338,0,0,,0.1915,0.392
+base,base,6,8,0,,ponderado,astar,h2,ok,40,8,1069,11668,351,0,0,,0.2114,0.396
+base,base,6,8,0,,ponderado,astar,h3,ok,40,8,1065,11632,338,0,0,,0.1841,0.392
+base,base,6,8,0,,ponderado,astar,h4,ok,40,11,816,9111,440,0,0,,0.1705,0.451
+base,base,6,8,0,,ponderado,idastar_simples,h4,falhou (tempo),,,116830,1307148,11,116522,11,0,60.0121,0.121
+base,base,6,8,0,,ponderado,idastar,h4,ok,40,16,10994,124272,17,10152,19,42495,6.1859,0.281
+pequena,pequena_01,5,9,0,7,movimentos,bfs,—,ok,7,7,248,2071,101,0,0,,0.0274,0.124
+pequena,pequena_01,5,9,0,7,movimentos,dfs,—,ok,50,50,176,1244,51,0,0,,0.0257,0.074
+pequena,pequena_01,5,9,0,7,movimentos,ids,—,ok,7,7,23120,195139,8,22872,8,,3.1826,0.062
+pequena,pequena_01,5,9,0,7,movimentos,ucs,—,ok,7,7,334,2845,101,0,0,,0.0394,0.159
+pequena,pequena_01,5,9,0,7,movimentos,gulosa,h1,ok,7,7,75,592,149,0,0,,0.0134,0.103
+pequena,pequena_01,5,9,0,7,movimentos,gulosa,h2,ok,7,7,75,592,149,0,0,,0.0175,0.104
+pequena,pequena_01,5,9,0,7,movimentos,astar,h0,ok,7,7,334,2845,101,0,0,,0.0428,0.185
+pequena,pequena_01,5,9,0,7,movimentos,astar,h1,ok,7,7,184,1517,174,0,0,,0.0309,0.163
+pequena,pequena_01,5,9,0,7,movimentos,astar,h2,ok,7,7,112,906,145,0,0,,0.0222,0.133
+pequena,pequena_01,5,9,0,7,movimentos,astar,h3,ok,7,7,114,919,135,0,0,,0.0179,0.128
+pequena,pequena_01,5,9,0,7,movimentos,astar,h4,ok,7,7,114,919,135,0,0,,0.0216,0.128
+pequena,pequena_01,5,9,0,7,movimentos,idastar_simples,h4,ok,7,7,1565,12485,8,1449,6,0,0.5194,0.051
+pequena,pequena_01,5,9,0,7,movimentos,idastar,h4,ok,7,7,282,2231,8,166,6,330,0.0989,0.057
+pequena,pequena_01,5,9,0,7,ponderado,bfs,—,ok,21,7,248,2071,101,0,0,,0.0282,0.123
+pequena,pequena_01,5,9,0,7,ponderado,dfs,—,ok,111,50,176,1244,51,0,0,,0.0267,0.073
+pequena,pequena_01,5,9,0,7,ponderado,ids,—,ok,21,7,23120,195139,8,22872,8,,3.1842,0.061
+pequena,pequena_01,5,9,0,7,ponderado,ucs,—,ok,21,7,409,3515,120,0,0,,0.0512,0.179
+pequena,pequena_01,5,9,0,7,ponderado,gulosa,h1,ok,21,7,75,592,149,0,0,,0.0125,0.103
+pequena,pequena_01,5,9,0,7,ponderado,gulosa,h2,ok,21,7,75,592,149,0,0,,0.0166,0.104
+pequena,pequena_01,5,9,0,7,ponderado,astar,h0,ok,21,7,409,3515,120,0,0,,0.0502,0.207
+pequena,pequena_01,5,9,0,7,ponderado,astar,h1,ok,21,7,368,3151,138,0,0,,0.0525,0.209
+pequena,pequena_01,5,9,0,7,ponderado,astar,h2,ok,21,7,346,2958,143,0,0,,0.0611,0.209
+pequena,pequena_01,5,9,0,7,ponderado,astar,h3,ok,21,7,341,2911,135,0,0,,0.0493,0.204
+pequena,pequena_01,5,9,0,7,ponderado,astar,h4,ok,21,7,200,1692,128,0,0,,0.0368,0.142
+pequena,pequena_01,5,9,0,7,ponderado,idastar_simples,h4,ok,21,10,79035,683618,11,78831,10,0,33.9207,0.07
+pequena,pequena_01,5,9,0,7,ponderado,idastar,h4,ok,21,10,1056,8713,11,852,10,2210,0.4272,0.085
+pequena,pequena_02,6,13,1,7,movimentos,bfs,—,ok,7,7,31,126,15,0,0,,0.0029,0.028
+pequena,pequena_02,6,13,1,7,movimentos,dfs,—,ok,12,12,14,30,13,0,0,,0.0015,0.023
+pequena,pequena_02,6,13,1,7,movimentos,ids,—,ok,7,7,231,985,8,200,8,,0.0281,0.029
+pequena,pequena_02,6,13,1,7,movimentos,ucs,—,ok,7,7,46,198,26,0,0,,0.0046,0.038
+pequena,pequena_02,6,13,1,7,movimentos,gulosa,h1,ok,8,8,16,73,20,0,0,,0.0028,0.028
+pequena,pequena_02,6,13,1,7,movimentos,gulosa,h2,ok,8,8,12,50,16,0,0,,0.0024,0.025
+pequena,pequena_02,6,13,1,7,movimentos,astar,h0,ok,7,7,46,198,26,0,0,,0.0047,0.042
+pequena,pequena_02,6,13,1,7,movimentos,astar,h1,ok,7,7,31,133,24,0,0,,0.0048,0.039
+pequena,pequena_02,6,13,1,7,movimentos,astar,h2,ok,7,7,29,126,26,0,0,,0.0047,0.04
+pequena,pequena_02,6,13,1,7,movimentos,astar,h3,ok,7,7,21,89,18,0,0,,0.0032,0.03
+pequena,pequena_02,6,13,1,7,movimentos,astar,h4,ok,7,7,21,89,18,0,0,,0.0037,0.03
+pequena,pequena_02,6,13,1,7,movimentos,idastar_simples,h4,ok,7,7,61,253,8,40,5,0,0.0139,0.025
+pequena,pequena_02,6,13,1,7,movimentos,idastar,h4,ok,7,7,46,179,8,25,5,9,0.0101,0.026
+pequena,pequena_02,6,13,1,7,ponderado,bfs,—,ok,24,7,31,126,15,0,0,,0.0029,0.028
+pequena,pequena_02,6,13,1,7,ponderado,dfs,—,ok,24,12,14,30,13,0,0,,0.0015,0.023
+pequena,pequena_02,6,13,1,7,ponderado,ids,—,ok,24,7,231,985,8,200,8,,0.0264,0.029
+pequena,pequena_02,6,13,1,7,ponderado,ucs,—,ok,21,8,56,253,27,0,0,,0.0054,0.041
+pequena,pequena_02,6,13,1,7,ponderado,gulosa,h1,ok,21,8,16,73,20,0,0,,0.0031,0.028
+pequena,pequena_02,6,13,1,7,ponderado,gulosa,h2,ok,21,8,12,50,16,0,0,,0.0023,0.025
+pequena,pequena_02,6,13,1,7,ponderado,astar,h0,ok,21,8,56,253,27,0,0,,0.0061,0.045
+pequena,pequena_02,6,13,1,7,ponderado,astar,h1,ok,21,8,48,208,27,0,0,,0.0065,0.043
+pequena,pequena_02,6,13,1,7,ponderado,astar,h2,ok,21,8,48,208,24,0,0,,0.0071,0.042
+pequena,pequena_02,6,13,1,7,ponderado,astar,h3,ok,21,8,45,194,27,0,0,,0.0057,0.043
+pequena,pequena_02,6,13,1,7,ponderado,astar,h4,ok,21,8,28,122,17,0,0,,0.0049,0.033
+pequena,pequena_02,6,13,1,7,ponderado,idastar_simples,h4,ok,21,10,507,2341,11,479,7,0,0.1198,0.031
+pequena,pequena_02,6,13,1,7,ponderado,idastar,h4,ok,21,10,91,353,11,63,7,47,0.0202,0.031
+pequena,pequena_03,6,11,1,6,movimentos,bfs,—,ok,6,6,232,2159,169,0,0,,0.0305,0.158
+pequena,pequena_03,6,11,1,6,movimentos,dfs,—,ok,50,50,850,7773,51,0,0,,0.1665,0.079
+pequena,pequena_03,6,11,1,6,movimentos,ids,—,ok,6,6,5969,55964,7,5737,7,,0.9613,0.062
+pequena,pequena_03,6,11,1,6,movimentos,ucs,—,ok,6,6,401,3681,205,0,0,,0.0598,0.23
+pequena,pequena_03,6,11,1,6,movimentos,gulosa,h1,ok,6,6,22,196,74,0,0,,0.0051,0.057
+pequena,pequena_03,6,11,1,6,movimentos,gulosa,h2,ok,6,6,16,146,63,0,0,,0.0048,0.047
+pequena,pequena_03,6,11,1,6,movimentos,astar,h0,ok,6,6,401,3681,205,0,0,,0.0618,0.265
+pequena,pequena_03,6,11,1,6,movimentos,astar,h1,ok,6,6,125,1148,188,0,0,,0.0242,0.159
+pequena,pequena_03,6,11,1,6,movimentos,astar,h2,ok,6,6,30,269,81,0,0,,0.0088,0.071
+pequena,pequena_03,6,11,1,6,movimentos,astar,h3,ok,6,6,47,417,93,0,0,,0.0099,0.08
+pequena,pequena_03,6,11,1,6,movimentos,astar,h4,ok,6,6,47,417,93,0,0,,0.0118,0.08
+pequena,pequena_03,6,11,1,6,movimentos,idastar_simples,h4,ok,6,6,129,1130,7,74,4,0,0.0542,0.04
+pequena,pequena_03,6,11,1,6,movimentos,idastar,h4,ok,6,6,81,716,7,26,4,38,0.0326,0.041
+pequena,pequena_03,6,11,1,6,ponderado,bfs,—,ok,23,6,232,2159,169,0,0,,0.0315,0.158
+pequena,pequena_03,6,11,1,6,ponderado,dfs,—,ok,121,50,850,7773,51,0,0,,0.1628,0.079
+pequena,pequena_03,6,11,1,6,ponderado,ids,—,ok,23,6,5969,55964,7,5737,7,,0.9516,0.062
+pequena,pequena_03,6,11,1,6,ponderado,ucs,—,ok,21,6,652,5855,183,0,0,,0.0918,0.285
+pequena,pequena_03,6,11,1,6,ponderado,gulosa,h1,ok,23,6,22,196,74,0,0,,0.0056,0.057
+pequena,pequena_03,6,11,1,6,ponderado,gulosa,h2,ok,23,6,16,146,63,0,0,,0.0048,0.047
+pequena,pequena_03,6,11,1,6,ponderado,astar,h0,ok,21,6,652,5855,183,0,0,,0.1143,0.337
+pequena,pequena_03,6,11,1,6,ponderado,astar,h1,ok,21,6,621,5636,228,0,0,,0.1051,0.345
+pequena,pequena_03,6,11,1,6,ponderado,astar,h2,ok,21,6,609,5555,234,0,0,,0.1138,0.338
+pequena,pequena_03,6,11,1,6,ponderado,astar,h3,ok,21,6,586,5385,228,0,0,,0.1004,0.345
+pequena,pequena_03,6,11,1,6,ponderado,astar,h4,ok,21,6,82,742,127,0,0,,0.0191,0.121
+pequena,pequena_03,6,11,1,6,ponderado,idastar_simples,h4,ok,21,10,1048,9459,11,931,7,0,0.4649,0.067
+pequena,pequena_03,6,11,1,6,ponderado,idastar,h4,ok,21,10,308,2787,11,191,7,303,0.1382,0.072
+pequena,pequena_04,6,11,2,6,movimentos,bfs,—,ok,6,6,39,210,24,0,0,,0.0039,0.033
+pequena,pequena_04,6,11,2,6,movimentos,dfs,—,ok,20,20,20,41,21,0,0,,0.0027,0.032
+pequena,pequena_04,6,11,2,6,movimentos,ids,—,ok,6,6,304,1503,7,265,7,,0.0352,0.028
+pequena,pequena_04,6,11,2,6,movimentos,ucs,—,ok,6,6,65,364,31,0,0,,0.0066,0.048
+pequena,pequena_04,6,11,2,6,movimentos,gulosa,h1,ok,6,6,10,53,21,0,0,,0.002,0.026
+pequena,pequena_04,6,11,2,6,movimentos,gulosa,h2,ok,6,6,9,52,22,0,0,,0.0023,0.027
+pequena,pequena_04,6,11,2,6,movimentos,astar,h0,ok,6,6,65,364,31,0,0,,0.0069,0.054
+pequena,pequena_04,6,11,2,6,movimentos,astar,h1,ok,6,6,27,138,26,0,0,,0.0038,0.039
+pequena,pequena_04,6,11,2,6,movimentos,astar,h2,ok,6,6,24,127,33,0,0,,0.0046,0.042
+pequena,pequena_04,6,11,2,6,movimentos,astar,h3,ok,6,6,15,73,24,0,0,,0.0025,0.031
+pequena,pequena_04,6,11,2,6,movimentos,astar,h4,ok,6,6,15,73,24,0,0,,0.0031,0.031
+pequena,pequena_04,6,11,2,6,movimentos,idastar_simples,h4,ok,6,6,33,150,7,18,3,0,0.0084,0.023
+pequena,pequena_04,6,11,2,6,movimentos,idastar,h4,ok,6,6,23,103,7,8,3,7,0.0057,0.023
+pequena,pequena_04,6,11,2,6,ponderado,bfs,—,ok,19,6,39,210,24,0,0,,0.0039,0.033
+pequena,pequena_04,6,11,2,6,ponderado,dfs,—,ok,43,20,20,41,21,0,0,,0.002,0.032
+pequena,pequena_04,6,11,2,6,ponderado,ids,—,ok,19,6,304,1503,7,265,7,,0.0341,0.028
+pequena,pequena_04,6,11,2,6,ponderado,ucs,—,ok,19,6,92,476,30,0,0,,0.0089,0.057
+pequena,pequena_04,6,11,2,6,ponderado,gulosa,h1,ok,19,6,10,53,21,0,0,,0.0019,0.026
+pequena,pequena_04,6,11,2,6,ponderado,gulosa,h2,ok,19,6,9,52,22,0,0,,0.0023,0.027
+pequena,pequena_04,6,11,2,6,ponderado,astar,h0,ok,19,6,92,476,30,0,0,,0.0093,0.063
+pequena,pequena_04,6,11,2,6,ponderado,astar,h1,ok,19,6,77,410,31,0,0,,0.0103,0.061
+pequena,pequena_04,6,11,2,6,ponderado,astar,h2,ok,19,6,76,407,34,0,0,,0.0122,0.058
+pequena,pequena_04,6,11,2,6,ponderado,astar,h3,ok,19,6,69,371,28,0,0,,0.0095,0.051
+pequena,pequena_04,6,11,2,6,ponderado,astar,h4,ok,19,7,15,69,23,0,0,,0.003,0.03
+pequena,pequena_04,6,11,2,6,ponderado,idastar_simples,h4,ok,19,9,34,159,10,16,3,0,0.0086,0.028
+pequena,pequena_04,6,11,2,6,ponderado,idastar,h4,ok,19,9,24,115,10,6,3,6,0.0061,0.029
+pequena,pequena_05,6,13,1,8,movimentos,bfs,—,ok,8,8,131,886,31,0,0,,0.0142,0.059
+pequena,pequena_05,6,13,1,8,movimentos,dfs,—,ok,50,50,403,2552,51,0,0,,0.0641,0.068
+pequena,pequena_05,6,13,1,8,movimentos,ids,—,ok,8,8,53804,366490,9,53673,9,,8.0328,0.055
+pequena,pequena_05,6,13,1,8,movimentos,ucs,—,ok,8,8,147,998,31,0,0,,0.0189,0.068
+pequena,pequena_05,6,13,1,8,movimentos,gulosa,h1,ok,8,8,35,233,81,0,0,,0.0069,0.065
+pequena,pequena_05,6,13,1,8,movimentos,gulosa,h2,ok,8,8,24,158,64,0,0,,0.0067,0.055
+pequena,pequena_05,6,13,1,8,movimentos,astar,h0,ok,8,8,147,998,31,0,0,,0.0198,0.074
+pequena,pequena_05,6,13,1,8,movimentos,astar,h1,ok,8,8,118,800,66,0,0,,0.0189,0.096
+pequena,pequena_05,6,13,1,8,movimentos,astar,h2,ok,8,8,90,602,82,0,0,,0.0197,0.099
+pequena,pequena_05,6,13,1,8,movimentos,astar,h3,ok,8,8,81,537,55,0,0,,0.0129,0.081
+pequena,pequena_05,6,13,1,8,movimentos,astar,h4,ok,8,8,81,537,55,0,0,,0.0162,0.081
+pequena,pequena_05,6,13,1,8,movimentos,idastar_simples,h4,ok,8,8,2678,17819,9,2597,6,0,0.9236,0.049
+pequena,pequena_05,6,13,1,8,movimentos,idastar,h4,ok,8,8,279,1802,9,198,6,353,0.0984,0.056
+pequena,pequena_05,6,13,1,8,ponderado,bfs,—,ok,23,8,131,886,31,0,0,,0.0158,0.059
+pequena,pequena_05,6,13,1,8,ponderado,dfs,—,ok,109,50,403,2552,51,0,0,,0.067,0.068
+pequena,pequena_05,6,13,1,8,ponderado,ids,—,ok,23,8,53804,366490,9,53673,9,,7.8324,0.055
+pequena,pequena_05,6,13,1,8,ponderado,ucs,—,ok,23,8,144,978,33,0,0,,0.0205,0.063
+pequena,pequena_05,6,13,1,8,ponderado,gulosa,h1,ok,23,8,35,233,81,0,0,,0.0069,0.065
+pequena,pequena_05,6,13,1,8,ponderado,gulosa,h2,ok,23,8,24,158,64,0,0,,0.0068,0.055
+pequena,pequena_05,6,13,1,8,ponderado,astar,h0,ok,23,8,144,978,33,0,0,,0.0183,0.069
+pequena,pequena_05,6,13,1,8,ponderado,astar,h1,ok,23,8,136,924,31,0,0,,0.0206,0.068
+pequena,pequena_05,6,13,1,8,ponderado,astar,h2,ok,23,8,135,917,31,0,0,,0.0233,0.07
+pequena,pequena_05,6,13,1,8,ponderado,astar,h3,ok,23,8,131,888,31,0,0,,0.0205,0.068
+pequena,pequena_05,6,13,1,8,ponderado,astar,h4,ok,23,8,99,664,43,0,0,,0.0173,0.079
+pequena,pequena_05,6,13,1,8,ponderado,idastar_simples,h4,ok,23,11,27538,187722,12,27438,15,0,10.8222,0.059
+pequena,pequena_05,6,13,1,8,ponderado,idastar,h4,ok,23,11,764,4883,12,664,15,1258,0.3939,0.068
+pequena,pequena_06,5,8,0,8,movimentos,bfs,—,ok,8,8,161,1129,87,0,0,,0.0191,0.071
+pequena,pequena_06,5,8,0,8,movimentos,dfs,—,ok,43,43,44,83,44,0,0,,0.0044,0.051
+pequena,pequena_06,5,8,0,8,movimentos,ids,—,ok,8,8,6096,34327,9,5935,9,,0.6573,0.047
+pequena,pequena_06,5,8,0,8,movimentos,ucs,—,ok,8,8,240,1783,87,0,0,,0.026,0.094
+pequena,pequena_06,5,8,0,8,movimentos,gulosa,h1,ok,10,10,28,150,45,0,0,,0.0042,0.037
+pequena,pequena_06,5,8,0,8,movimentos,gulosa,h2,ok,10,10,28,150,45,0,0,,0.0064,0.038
+pequena,pequena_06,5,8,0,8,movimentos,astar,h0,ok,8,8,240,1783,87,0,0,,0.0291,0.111
+pequena,pequena_06,5,8,0,8,movimentos,astar,h1,ok,8,8,82,552,163,0,0,,0.013,0.131
+pequena,pequena_06,5,8,0,8,movimentos,astar,h2,ok,8,8,39,220,58,0,0,,0.0086,0.055
+pequena,pequena_06,5,8,0,8,movimentos,astar,h3,ok,8,8,37,203,50,0,0,,0.0059,0.052
+pequena,pequena_06,5,8,0,8,movimentos,astar,h4,ok,8,8,37,203,50,0,0,,0.0077,0.052
+pequena,pequena_06,5,8,0,8,movimentos,idastar_simples,h4,ok,8,8,828,3904,9,791,6,0,0.1799,0.03
+pequena,pequena_06,5,8,0,8,movimentos,idastar,h4,ok,8,8,152,757,9,115,6,128,0.039,0.033
+pequena,pequena_06,5,8,0,8,ponderado,bfs,—,ok,30,8,161,1129,87,0,0,,0.0163,0.071
+pequena,pequena_06,5,8,0,8,ponderado,dfs,—,ok,88,43,44,83,44,0,0,,0.0036,0.051
+pequena,pequena_06,5,8,0,8,ponderado,ids,—,ok,30,8,6096,34327,9,5935,9,,0.6738,0.047
+pequena,pequena_06,5,8,0,8,ponderado,ucs,—,ok,30,8,290,2165,76,0,0,,0.0322,0.102
+pequena,pequena_06,5,8,0,8,ponderado,gulosa,h1,ok,34,10,28,150,45,0,0,,0.004,0.037
+pequena,pequena_06,5,8,0,8,ponderado,gulosa,h2,ok,34,10,28,150,45,0,0,,0.0067,0.038
+pequena,pequena_06,5,8,0,8,ponderado,astar,h0,ok,30,8,290,2165,76,0,0,,0.0342,0.117
+pequena,pequena_06,5,8,0,8,ponderado,astar,h1,ok,30,8,285,2133,73,0,0,,0.0388,0.118
+pequena,pequena_06,5,8,0,8,ponderado,astar,h2,ok,30,8,276,2069,82,0,0,,0.055,0.118
+pequena,pequena_06,5,8,0,8,ponderado,astar,h3,ok,30,8,261,1949,73,0,0,,0.0364,0.116
+pequena,pequena_06,5,8,0,8,ponderado,astar,h4,ok,30,10,109,697,88,0,0,,0.0214,0.104
+pequena,pequena_06,5,8,0,8,ponderado,idastar_simples,h4,ok,30,15,46286,266779,16,46170,12,0,13.2608,0.06
+pequena,pequena_06,5,8,0,8,ponderado,idastar,h4,ok,30,15,747,4013,16,631,12,905,0.2167,0.07
+pequena,pequena_07,5,10,0,8,movimentos,bfs,—,ok,8,8,156,1078,67,0,0,,0.016,0.073
+pequena,pequena_07,5,10,0,8,movimentos,dfs,—,ok,30,30,30,54,31,0,0,,0.0026,0.04
+pequena,pequena_07,5,10,0,8,movimentos,ids,—,ok,8,8,10581,70934,9,10425,9,,1.3349,0.054
+pequena,pequena_07,5,10,0,8,movimentos,ucs,—,ok,8,8,219,1543,73,0,0,,0.0241,0.1
+pequena,pequena_07,5,10,0,8,movimentos,gulosa,h1,ok,9,9,23,119,36,0,0,,0.0034,0.036
+pequena,pequena_07,5,10,0,8,movimentos,gulosa,h2,ok,8,8,14,78,33,0,0,,0.0033,0.031
+pequena,pequena_07,5,10,0,8,movimentos,astar,h0,ok,8,8,219,1543,73,0,0,,0.0259,0.115
+pequena,pequena_07,5,10,0,8,movimentos,astar,h1,ok,8,8,51,321,81,0,0,,0.0079,0.076
+pequena,pequena_07,5,10,0,8,movimentos,astar,h2,ok,8,8,36,217,63,0,0,,0.007,0.062
+pequena,pequena_07,5,10,0,8,movimentos,astar,h3,ok,8,8,29,147,32,0,0,,0.0039,0.04
+pequena,pequena_07,5,10,0,8,movimentos,astar,h4,ok,8,8,29,147,32,0,0,,0.0056,0.04
+pequena,pequena_07,5,10,0,8,movimentos,idastar_simples,h4,ok,8,8,351,1531,9,322,6,0,0.0735,0.029
+pequena,pequena_07,5,10,0,8,movimentos,idastar,h4,ok,8,8,95,431,9,66,6,72,0.0221,0.03
+pequena,pequena_07,5,10,0,8,ponderado,bfs,—,ok,24,8,156,1078,67,0,0,,0.0164,0.073
+pequena,pequena_07,5,10,0,8,ponderado,dfs,—,ok,62,30,30,54,31,0,0,,0.0026,0.04
+pequena,pequena_07,5,10,0,8,ponderado,ids,—,ok,24,8,10581,70934,9,10425,9,,1.3696,0.054
+pequena,pequena_07,5,10,0,8,ponderado,ucs,—,ok,24,9,229,1607,73,0,0,,0.0264,0.105
+pequena,pequena_07,5,10,0,8,ponderado,gulosa,h1,ok,26,9,23,119,36,0,0,,0.0034,0.036
+pequena,pequena_07,5,10,0,8,ponderado,gulosa,h2,ok,26,8,14,78,33,0,0,,0.0041,0.031
+pequena,pequena_07,5,10,0,8,ponderado,astar,h0,ok,24,9,229,1607,73,0,0,,0.0262,0.121
+pequena,pequena_07,5,10,0,8,ponderado,astar,h1,ok,24,10,216,1515,78,0,0,,0.0286,0.118
+pequena,pequena_07,5,10,0,8,ponderado,astar,h2,ok,24,9,212,1490,78,0,0,,0.0335,0.116
+pequena,pequena_07,5,10,0,8,ponderado,astar,h3,ok,24,10,190,1334,78,0,0,,0.0315,0.112
+pequena,pequena_07,5,10,0,8,ponderado,astar,h4,ok,24,10,45,264,53,0,0,,0.0088,0.059
+pequena,pequena_07,5,10,0,8,ponderado,idastar_simples,h4,ok,24,12,8144,37472,13,8078,9,0,1.971,0.051
+pequena,pequena_07,5,10,0,8,ponderado,idastar,h4,ok,24,12,332,1661,13,266,9,354,0.0934,0.058
+pequena,pequena_08,6,13,1,6,movimentos,bfs,—,ok,6,6,271,2402,149,0,0,,0.038,0.171
+pequena,pequena_08,6,13,1,6,movimentos,dfs,—,ok,50,50,9114,85766,51,0,0,,1.8868,0.078
+pequena,pequena_08,6,13,1,6,movimentos,ids,—,ok,6,6,8399,75190,7,8128,7,,1.3739,0.072
+pequena,pequena_08,6,13,1,6,movimentos,ucs,—,ok,6,6,418,3706,159,0,0,,0.0624,0.237
+pequena,pequena_08,6,13,1,6,movimentos,gulosa,h1,ok,6,6,148,1302,133,0,0,,0.0265,0.126
+pequena,pequena_08,6,13,1,6,movimentos,gulosa,h2,ok,6,6,63,544,99,0,0,,0.0149,0.079
+pequena,pequena_08,6,13,1,6,movimentos,astar,h0,ok,6,6,418,3706,159,0,0,,0.063,0.269
+pequena,pequena_08,6,13,1,6,movimentos,astar,h1,ok,6,6,218,1925,151,0,0,,0.0379,0.191
+pequena,pequena_08,6,13,1,6,movimentos,astar,h2,ok,6,6,111,964,129,0,0,,0.0238,0.133
+pequena,pequena_08,6,13,1,6,movimentos,astar,h3,ok,6,6,147,1295,130,0,0,,0.0271,0.141
+pequena,pequena_08,6,13,1,6,movimentos,astar,h4,ok,6,6,147,1295,130,0,0,,0.0319,0.141
+pequena,pequena_08,6,13,1,6,movimentos,idastar_simples,h4,ok,6,6,1098,9712,7,951,5,0,0.4383,0.059
+pequena,pequena_08,6,13,1,6,movimentos,idastar,h4,ok,6,6,326,2824,7,179,5,395,0.1256,0.073
+pequena,pequena_08,6,13,1,6,ponderado,bfs,—,ok,16,6,271,2402,149,0,0,,0.0361,0.171
+pequena,pequena_08,6,13,1,6,ponderado,dfs,—,ok,105,50,9114,85766,51,0,0,,1.8077,0.078
+pequena,pequena_08,6,13,1,6,ponderado,ids,—,ok,16,6,8399,75190,7,8128,7,,1.3297,0.072
+pequena,pequena_08,6,13,1,6,ponderado,ucs,—,ok,16,6,436,3875,165,0,0,,0.0645,0.241
+pequena,pequena_08,6,13,1,6,ponderado,gulosa,h1,ok,16,6,148,1302,133,0,0,,0.0304,0.126
+pequena,pequena_08,6,13,1,6,ponderado,gulosa,h2,ok,16,6,63,544,99,0,0,,0.0146,0.079
+pequena,pequena_08,6,13,1,6,ponderado,astar,h0,ok,16,6,436,3875,165,0,0,,0.0697,0.274
+pequena,pequena_08,6,13,1,6,ponderado,astar,h1,ok,16,6,376,3332,170,0,0,,0.0682,0.265
+pequena,pequena_08,6,13,1,6,ponderado,astar,h2,ok,16,6,336,2994,189,0,0,,0.072,0.263
+pequena,pequena_08,6,13,1,6,ponderado,astar,h3,ok,16,6,325,2905,170,0,0,,0.0629,0.257
+pequena,pequena_08,6,13,1,6,ponderado,astar,h4,ok,16,6,150,1347,158,0,0,,0.0354,0.16
+pequena,pequena_08,6,13,1,6,ponderado,idastar_simples,h4,ok,16,8,7731,72310,9,7570,7,0,3.5541,0.069
+pequena,pequena_08,6,13,1,6,ponderado,idastar,h4,ok,16,8,525,4763,9,364,7,953,0.2523,0.079
+pequena,pequena_09,5,10,2,8,movimentos,bfs,—,ok,8,8,41,175,9,0,0,,0.0035,0.027
+pequena,pequena_09,5,10,2,8,movimentos,dfs,—,ok,17,17,17,30,18,0,0,,0.0016,0.027
+pequena,pequena_09,5,10,2,8,movimentos,ids,—,ok,8,8,1787,8169,9,1746,9,,0.1796,0.032
+pequena,pequena_09,5,10,2,8,movimentos,ucs,—,ok,8,8,47,206,9,0,0,,0.0041,0.029
+pequena,pequena_09,5,10,2,8,movimentos,gulosa,h1,ok,8,8,18,85,24,0,0,,0.0027,0.028
+pequena,pequena_09,5,10,2,8,movimentos,gulosa,h2,ok,8,8,15,72,25,0,0,,0.0029,0.029
+pequena,pequena_09,5,10,2,8,movimentos,astar,h0,ok,8,8,47,206,9,0,0,,0.0042,0.032
+pequena,pequena_09,5,10,2,8,movimentos,astar,h1,ok,8,8,37,165,21,0,0,,0.0043,0.038
+pequena,pequena_09,5,10,2,8,movimentos,astar,h2,ok,8,8,31,137,26,0,0,,0.0047,0.038
+pequena,pequena_09,5,10,2,8,movimentos,astar,h3,ok,8,8,29,128,19,0,0,,0.0036,0.034
+pequena,pequena_09,5,10,2,8,movimentos,astar,h4,ok,8,8,29,128,19,0,0,,0.0042,0.034
+pequena,pequena_09,5,10,2,8,movimentos,idastar_simples,h4,ok,8,8,290,1358,9,261,6,0,0.064,0.029
+pequena,pequena_09,5,10,2,8,movimentos,idastar,h4,ok,8,8,98,412,9,69,6,53,0.0237,0.031
+pequena,pequena_09,5,10,2,8,ponderado,bfs,—,ok,20,8,41,175,9,0,0,,0.0033,0.027
+pequena,pequena_09,5,10,2,8,ponderado,dfs,—,ok,36,17,17,30,18,0,0,,0.0015,0.027
+pequena,pequena_09,5,10,2,8,ponderado,ids,—,ok,20,8,1787,8169,9,1746,9,,0.182,0.032
+pequena,pequena_09,5,10,2,8,ponderado,ucs,—,ok,20,8,50,220,10,0,0,,0.0043,0.029
+pequena,pequena_09,5,10,2,8,ponderado,gulosa,h1,ok,20,8,18,85,24,0,0,,0.0025,0.028
+pequena,pequena_09,5,10,2,8,ponderado,gulosa,h2,ok,20,8,15,72,25,0,0,,0.003,0.029
+pequena,pequena_09,5,10,2,8,ponderado,astar,h0,ok,20,8,50,220,10,0,0,,0.009,0.031
+pequena,pequena_09,5,10,2,8,ponderado,astar,h1,ok,20,8,49,217,11,0,0,,0.0054,0.033
+pequena,pequena_09,5,10,2,8,ponderado,astar,h2,ok,20,8,49,217,13,0,0,,0.0083,0.034
+pequena,pequena_09,5,10,2,8,ponderado,astar,h3,ok,20,8,47,208,11,0,0,,0.0053,0.033
+pequena,pequena_09,5,10,2,8,ponderado,astar,h4,ok,20,9,33,143,13,0,0,,0.0049,0.031
+pequena,pequena_09,5,10,2,8,ponderado,idastar_simples,h4,ok,20,10,722,3248,11,689,6,0,0.1651,0.029
+pequena,pequena_09,5,10,2,8,ponderado,idastar,h4,ok,20,10,91,373,11,58,6,60,0.0193,0.029
+pequena,pequena_10,5,10,2,6,movimentos,bfs,—,ok,6,6,25,99,8,0,0,,0.002,0.023
+pequena,pequena_10,5,10,2,6,movimentos,dfs,—,ok,24,24,25,45,25,0,0,,0.002,0.033
+pequena,pequena_10,5,10,2,6,movimentos,ids,—,ok,6,6,130,533,7,105,7,,0.0118,0.025
+pequena,pequena_10,5,10,2,6,movimentos,ucs,—,ok,6,6,31,129,8,0,0,,0.0028,0.025
+pequena,pequena_10,5,10,2,6,movimentos,gulosa,h1,ok,6,6,15,66,14,0,0,,0.0019,0.025
+pequena,pequena_10,5,10,2,6,movimentos,gulosa,h2,ok,6,6,10,45,15,0,0,,0.0018,0.024
+pequena,pequena_10,5,10,2,6,movimentos,astar,h0,ok,6,6,31,129,8,0,0,,0.0028,0.026
+pequena,pequena_10,5,10,2,6,movimentos,astar,h1,ok,6,6,21,85,11,0,0,,0.0025,0.028
+pequena,pequena_10,5,10,2,6,movimentos,astar,h2,ok,6,6,16,64,15,0,0,,0.0029,0.028
+pequena,pequena_10,5,10,2,6,movimentos,astar,h3,ok,6,6,17,67,11,0,0,,0.0022,0.025
+pequena,pequena_10,5,10,2,6,movimentos,astar,h4,ok,6,6,17,67,11,0,0,,0.0025,0.025
+pequena,pequena_10,5,10,2,6,movimentos,idastar_simples,h4,ok,6,6,35,138,7,18,4,0,0.0072,0.02
+pequena,pequena_10,5,10,2,6,movimentos,idastar,h4,ok,6,6,29,109,7,12,4,5,0.0052,0.021
+pequena,pequena_10,5,10,2,6,ponderado,bfs,—,ok,16,6,25,99,8,0,0,,0.0019,0.023
+pequena,pequena_10,5,10,2,6,ponderado,dfs,—,ok,48,24,25,45,25,0,0,,0.002,0.033
+pequena,pequena_10,5,10,2,6,ponderado,ids,—,ok,16,6,130,533,7,105,7,,0.0122,0.025
+pequena,pequena_10,5,10,2,6,ponderado,ucs,—,ok,16,6,32,133,9,0,0,,0.0026,0.024
+pequena,pequena_10,5,10,2,6,ponderado,gulosa,h1,ok,16,6,15,66,14,0,0,,0.0021,0.025
+pequena,pequena_10,5,10,2,6,ponderado,gulosa,h2,ok,16,6,10,45,15,0,0,,0.0023,0.024
+pequena,pequena_10,5,10,2,6,ponderado,astar,h0,ok,16,6,32,133,9,0,0,,0.0029,0.026
+pequena,pequena_10,5,10,2,6,ponderado,astar,h1,ok,16,6,32,133,10,0,0,,0.0036,0.026
+pequena,pequena_10,5,10,2,6,ponderado,astar,h2,ok,16,6,31,129,10,0,0,,0.004,0.026
+pequena,pequena_10,5,10,2,6,ponderado,astar,h3,ok,16,6,29,120,10,0,0,,0.0032,0.026
+pequena,pequena_10,5,10,2,6,ponderado,astar,h4,ok,16,7,20,81,13,0,0,,0.0031,0.028
+pequena,pequena_10,5,10,2,6,ponderado,idastar_simples,h4,ok,16,8,57,245,9,37,4,0,0.0116,0.025
+pequena,pequena_10,5,10,2,6,ponderado,idastar,h4,ok,16,8,35,135,9,15,4,11,0.0066,0.026
+media,media_01,6,12,0,15,movimentos,bfs,—,ok,15,15,3430,35693,512,0,0,,0.4913,0.958
+media,media_01,6,12,0,15,movimentos,dfs,—,falhou (tempo),,,269104,3094145,51,0,0,,60.0012,0.079
+media,media_01,6,12,0,15,movimentos,ids,—,falhou (tempo),,,368660,3463305,9,367785,9,,60.0011,0.183
+media,media_01,6,12,0,15,movimentos,ucs,—,ok,15,15,3849,39617,512,0,0,,0.5814,1.188
+media,media_01,6,12,0,15,movimentos,gulosa,h1,ok,15,15,2341,25176,512,0,0,,0.4213,0.786
+media,media_01,6,12,0,15,movimentos,gulosa,h2,ok,15,15,2316,24937,512,0,0,,0.4619,0.786
+media,media_01,6,12,0,15,movimentos,astar,h0,ok,15,15,3849,39617,512,0,0,,0.6293,1.373
+media,media_01,6,12,0,15,movimentos,astar,h1,ok,15,15,2977,31320,691,0,0,,0.561,1.331
+media,media_01,6,12,0,15,movimentos,astar,h2,ok,15,15,2666,28351,598,0,0,,0.563,1.215
+media,media_01,6,12,0,15,movimentos,astar,h3,ok,15,15,2673,28381,512,0,0,,0.5065,1.154
+media,media_01,6,12,0,15,movimentos,astar,h4,ok,15,15,2673,28381,512,0,0,,0.5495,1.154
+media,media_01,6,12,0,15,movimentos,idastar_simples,h4,falhou (tempo),,,148957,1298102,9,148449,8,0,60.0021,0.143
+media,media_01,6,12,0,15,movimentos,idastar,h4,ok,15,15,49471,521002,16,46681,14,283078,24.5411,0.996
+media,media_01,6,12,0,15,ponderado,bfs,—,ok,51,15,3430,35693,512,0,0,,0.4782,0.958
+media,media_01,6,12,0,15,ponderado,dfs,—,falhou (tempo),,,258533,2969628,51,0,0,,60.0037,0.079
+media,media_01,6,12,0,15,ponderado,ids,—,falhou (tempo),,,368358,3460634,9,367483,9,,60.0096,0.183
+media,media_01,6,12,0,15,ponderado,ucs,—,ok,51,16,4002,41041,580,0,0,,0.8141,1.075
+media,media_01,6,12,0,15,ponderado,gulosa,h1,ok,51,15,2341,25176,512,0,0,,0.3857,0.786
+media,media_01,6,12,0,15,ponderado,gulosa,h2,ok,51,15,2316,24937,512,0,0,,0.5091,0.786
+media,media_01,6,12,0,15,ponderado,astar,h0,ok,51,16,4002,41041,580,0,0,,0.6316,1.261
+media,media_01,6,12,0,15,ponderado,astar,h1,ok,51,16,3873,39943,580,0,0,,0.6469,1.27
+media,media_01,6,12,0,15,ponderado,astar,h2,ok,51,16,3754,38870,580,0,0,,0.6865,1.26
+media,media_01,6,12,0,15,ponderado,astar,h3,ok,51,16,3773,39051,580,0,0,,0.6134,1.27
+media,media_01,6,12,0,15,ponderado,astar,h4,ok,51,16,2957,31314,575,0,0,,0.5359,1.238
+media,media_01,6,12,0,15,ponderado,idastar_simples,h4,falhou (tempo),,,102559,943490,9,102258,13,0,60.0314,0.096
+media,media_01,6,12,0,15,ponderado,idastar,h4,falhou (tempo),,,54252,547594,19,52276,32,262821,60.0237,0.811
+media,media_02,6,14,0,15,movimentos,bfs,—,ok,15,15,1761,17009,982,0,0,,0.5844,0.96
+media,media_02,6,14,0,15,movimentos,dfs,—,falhou (tempo),,,138301,1308477,51,0,0,,60.0033,0.064
+media,media_02,6,14,0,15,movimentos,ids,—,falhou (tempo),,,217319,1106657,12,217147,12,,60.0151,0.07
+media,media_02,6,14,0,15,movimentos,ucs,—,ok,15,15,2741,26892,1372,0,0,,0.8642,1.624
+media,media_02,6,14,0,15,movimentos,gulosa,h1,ok,15,15,1051,10006,722,0,0,,0.4372,0.727
+media,media_02,6,14,0,15,movimentos,gulosa,h2,ok,16,16,1051,10007,732,0,0,,0.6278,0.732
+media,media_02,6,14,0,15,movimentos,astar,h0,ok,15,15,2741,26892,1372,0,0,,1.0298,1.89
+media,media_02,6,14,0,15,movimentos,astar,h1,ok,15,15,1241,11923,859,0,0,,0.448,1.113
+media,media_02,6,14,0,15,movimentos,astar,h2,ok,15,15,1053,10033,743,1,0,,0.5306,0.874
+media,media_02,6,14,0,15,movimentos,astar,h3,ok,15,15,1051,10006,722,0,0,,0.4448,0.863
+media,media_02,6,14,0,15,movimentos,astar,h4,ok,15,15,1051,10006,722,0,0,,0.4663,0.863
+media,media_02,6,14,0,15,movimentos,idastar_simples,h4,falhou (tempo),,,114215,576416,12,114122,11,0,60.0213,0.06
+media,media_02,6,14,0,15,movimentos,idastar,h4,ok,15,15,5178,42111,16,4127,14,12445,4.8745,0.389
+media,media_02,6,14,0,15,ponderado,bfs,—,ok,41,15,1761,17009,982,0,0,,0.6266,0.96
+media,media_02,6,14,0,15,ponderado,dfs,—,falhou (tempo),,,140757,1331911,51,0,0,,60.0236,0.064
+media,media_02,6,14,0,15,ponderado,ids,—,falhou (tempo),,,205604,1047043,12,205432,12,,60.0076,0.07
+media,media_02,6,14,0,15,ponderado,ucs,—,ok,41,15,1961,19113,1232,0,0,,0.7221,1.354
+media,media_02,6,14,0,15,ponderado,gulosa,h1,ok,41,15,1051,10006,722,0,0,,0.4788,0.727
+media,media_02,6,14,0,15,ponderado,gulosa,h2,ok,41,16,1051,10007,732,0,0,,0.4698,0.732
+media,media_02,6,14,0,15,ponderado,astar,h0,ok,41,15,1961,19113,1232,0,0,,0.6682,1.607
+media,media_02,6,14,0,15,ponderado,astar,h1,ok,41,15,1444,14021,1107,0,0,,0.7487,1.27
+media,media_02,6,14,0,15,ponderado,astar,h2,ok,41,15,1228,11783,1044,0,0,,0.6519,1.09
+media,media_02,6,14,0,15,ponderado,astar,h3,ok,41,15,1222,11710,1015,0,0,,0.6096,1.072
+media,media_02,6,14,0,15,ponderado,astar,h4,ok,41,15,819,7774,794,0,0,,0.4951,0.844
+media,media_02,6,14,0,15,ponderado,idastar_simples,h4,falhou (tempo),,,103318,523311,11,103255,13,0,60.0663,0.046
+media,media_02,6,14,0,15,ponderado,idastar,h4,ok,41,19,11821,87010,20,10867,31,30830,10.2389,0.409
+media,media_03,6,10,1,15,movimentos,bfs,—,ok,15,15,1205,11159,390,0,0,,0.3557,0.519
+media,media_03,6,10,1,15,movimentos,dfs,—,falhou (tempo),,,174301,1431567,51,0,0,,60.0045,0.067
+media,media_03,6,10,1,15,movimentos,ids,—,falhou (tempo),,,221931,1600874,10,221741,10,,60.0114,0.061
+media,media_03,6,10,1,15,movimentos,ucs,—,ok,15,15,1594,14768,424,0,0,,0.4637,0.717
+media,media_03,6,10,1,15,movimentos,gulosa,h1,ok,15,15,259,2487,620,0,0,,0.0948,0.388
+media,media_03,6,10,1,15,movimentos,gulosa,h2,ok,15,15,177,1755,423,0,0,,0.1375,0.263
+media,media_03,6,10,1,15,movimentos,astar,h0,ok,15,15,1594,14768,424,0,0,,0.6332,0.826
+media,media_03,6,10,1,15,movimentos,astar,h1,ok,15,15,949,8873,710,0,0,,0.3715,0.693
+media,media_03,6,10,1,15,movimentos,astar,h2,ok,15,15,747,7065,782,0,0,,0.374,0.687
+media,media_03,6,10,1,15,movimentos,astar,h3,ok,15,15,759,7142,670,0,0,,0.3022,0.633
+media,media_03,6,10,1,15,movimentos,astar,h4,ok,15,15,759,7142,670,0,0,,0.3636,0.633
+media,media_03,6,10,1,15,movimentos,idastar_simples,h4,falhou (tempo),,,85557,603881,11,85400,9,0,60.0148,0.067
+media,media_03,6,10,1,15,movimentos,idastar,h4,ok,15,15,6981,56602,16,6220,13,21089,6.2974,0.271
+media,media_03,6,10,1,15,ponderado,bfs,—,ok,54,15,1205,11159,390,0,0,,0.2471,0.519
+media,media_03,6,10,1,15,ponderado,dfs,—,falhou (tempo),,,197502,1624762,51,0,0,,60.0084,0.067
+media,media_03,6,10,1,15,ponderado,ids,—,falhou (tempo),,,247294,1785906,10,247091,10,,60.0066,0.063
+media,media_03,6,10,1,15,ponderado,ucs,—,ok,54,15,1908,17809,627,0,0,,0.5644,0.845
+media,media_03,6,10,1,15,ponderado,gulosa,h1,ok,54,15,259,2487,620,0,0,,0.1235,0.388
+media,media_03,6,10,1,15,ponderado,gulosa,h2,ok,54,15,177,1755,423,0,0,,0.1011,0.263
+media,media_03,6,10,1,15,ponderado,astar,h0,ok,54,15,1908,17809,627,0,0,,0.5961,0.972
+media,media_03,6,10,1,15,ponderado,astar,h1,ok,54,15,1582,14733,631,0,0,,0.3846,0.893
+media,media_03,6,10,1,15,ponderado,astar,h2,ok,54,15,1428,13347,567,0,0,,0.3792,0.826
+media,media_03,6,10,1,15,ponderado,astar,h3,ok,54,15,1467,13673,613,0,0,,0.546,0.857
+media,media_03,6,10,1,15,ponderado,astar,h4,ok,54,15,665,6148,396,0,0,,0.3132,0.441
+media,media_03,6,10,1,15,ponderado,idastar_simples,h4,falhou (tempo),,,94498,640828,16,94393,21,0,60.0085,0.078
+media,media_03,6,10,1,15,ponderado,idastar,h4,ok,54,23,12133,101489,24,11405,35,35820,10.8498,0.317
+media,media_04,6,13,1,20,movimentos,bfs,—,ok,20,20,7818,77444,958,0,0,,2.5561,1.784
+media,media_04,6,13,1,20,movimentos,dfs,—,falhou (tempo),,,154122,1673203,51,0,0,,60.0047,0.088
+media,media_04,6,13,1,20,movimentos,ids,—,falhou (tempo),,,201176,2136880,8,200142,8,,60.0039,0.209
+media,media_04,6,13,1,20,movimentos,ucs,—,ok,20,20,8013,79341,958,0,0,,1.7655,2.185
+media,media_04,6,13,1,20,movimentos,gulosa,h1,ok,24,24,3633,37517,3011,0,0,,0.8305,2.591
+media,media_04,6,13,1,20,movimentos,gulosa,h2,ok,23,23,3416,35495,3000,0,0,,1.098,2.586
+media,media_04,6,13,1,20,movimentos,astar,h0,ok,20,20,8013,79341,958,0,0,,2.3917,2.547
+media,media_04,6,13,1,20,movimentos,astar,h1,ok,20,20,7278,72747,2006,0,0,,3.258,3.25
+media,media_04,6,13,1,20,movimentos,astar,h2,ok,20,20,7097,71286,2129,0,0,,2.8393,3.365
+media,media_04,6,13,1,20,movimentos,astar,h3,ok,20,20,7167,71797,2006,0,0,,1.4865,3.25
+media,media_04,6,13,1,20,movimentos,astar,h4,ok,20,20,7167,71797,2006,0,0,,2.1556,3.25
+media,media_04,6,13,1,20,movimentos,idastar_simples,h4,falhou (tempo),,,48883,535008,9,48340,6,0,60.0328,0.156
+media,media_04,6,13,1,20,movimentos,idastar,h4,falhou (tempo),,,46148,486662,14,41646,11,221129,60.0201,1.529
+media,media_04,6,13,1,20,ponderado,bfs,—,ok,72,20,7818,77444,958,0,0,,2.4518,1.784
+media,media_04,6,13,1,20,ponderado,dfs,—,falhou (tempo),,,143796,1560739,51,0,0,,60.004,0.088
+media,media_04,6,13,1,20,ponderado,ids,—,falhou (tempo),,,185674,1974426,8,184652,8,,60.007,0.208
+media,media_04,6,13,1,20,ponderado,ucs,—,ok,72,22,8125,80529,964,0,0,,2.4894,2.256
+media,media_04,6,13,1,20,ponderado,gulosa,h1,ok,72,24,3633,37517,3020,0,0,,1.5353,2.59
+media,media_04,6,13,1,20,ponderado,gulosa,h2,ok,72,23,3416,35495,3008,0,0,,1.6914,2.582
+media,media_04,6,13,1,20,ponderado,astar,h0,ok,72,22,8125,80529,964,0,0,,1.4758,2.619
+media,media_04,6,13,1,20,ponderado,astar,h1,ok,72,23,8051,79846,1055,0,0,,1.7585,2.576
+media,media_04,6,13,1,20,ponderado,astar,h2,ok,72,22,8045,79803,1063,0,0,,3.3935,2.579
+media,media_04,6,13,1,20,ponderado,astar,h3,ok,72,23,7969,79026,1055,0,0,,2.701,2.576
+media,media_04,6,13,1,20,ponderado,astar,h4,ok,72,26,7354,73322,1693,0,0,,3.3328,2.834
+media,media_04,6,13,1,20,ponderado,idastar_simples,h4,falhou (tempo),,,49936,563974,12,49565,5,0,60.0047,0.146
+media,media_04,6,13,1,20,ponderado,idastar,h4,falhou (tempo),,,62876,668241,21,57778,14,348943,60.0209,2.216
+media,media_05,6,13,0,19,movimentos,bfs,—,ok,19,19,1859,18999,583,0,0,,0.5719,0.756
+media,media_05,6,13,0,19,movimentos,dfs,—,falhou (tempo),,,218905,1733321,51,0,0,,60.01,0.072
+media,media_05,6,13,0,19,movimentos,ids,—,falhou (tempo),,,306822,2403922,9,306600,9,,60.0104,0.069
+media,media_05,6,13,0,19,movimentos,ucs,—,ok,19,19,2441,26448,1016,0,0,,0.8719,1.328
+media,media_05,6,13,0,19,movimentos,gulosa,h1,ok,21,21,638,6077,721,0,0,,0.2692,0.559
+media,media_05,6,13,0,19,movimentos,gulosa,h2,ok,19,19,444,3987,493,0,0,,0.2371,0.41
+media,media_05,6,13,0,19,movimentos,astar,h0,ok,19,19,2441,26448,1016,0,0,,0.888,1.561
+media,media_05,6,13,0,19,movimentos,astar,h1,ok,19,19,1596,15874,670,0,0,,0.6236,0.987
+media,media_05,6,13,0,19,movimentos,astar,h2,ok,19,19,1272,12251,874,0,0,,0.6058,1.052
+media,media_05,6,13,0,19,movimentos,astar,h3,ok,19,19,1316,12652,466,0,0,,0.3932,0.8
+media,media_05,6,13,0,19,movimentos,astar,h4,ok,19,19,1316,12652,466,0,0,,0.6142,0.8
+media,media_05,6,13,0,19,movimentos,idastar_simples,h4,falhou (tempo),,,71937,531274,9,71756,7,0,60.0046,0.072
+media,media_05,6,13,0,19,movimentos,idastar,h4,ok,19,19,24263,200191,20,22866,16,101473,26.9478,0.673
+media,media_05,6,13,0,19,ponderado,bfs,—,ok,58,19,1859,18999,583,0,0,,0.5508,0.756
+media,media_05,6,13,0,19,ponderado,dfs,—,falhou (tempo),,,226331,1791244,51,0,0,,60.0136,0.072
+media,media_05,6,13,0,19,ponderado,ids,—,falhou (tempo),,,291282,2282429,9,291061,9,,60.0045,0.069
+media,media_05,6,13,0,19,ponderado,ucs,—,ok,58,19,1811,18559,680,0,0,,0.5843,0.902
+media,media_05,6,13,0,19,ponderado,gulosa,h1,ok,58,21,638,6077,721,0,0,,0.2528,0.559
+media,media_05,6,13,0,19,ponderado,gulosa,h2,ok,58,19,444,3987,497,0,0,,0.2219,0.412
+media,media_05,6,13,0,19,ponderado,astar,h0,ok,58,19,1811,18559,680,0,0,,0.5968,1.034
+media,media_05,6,13,0,19,ponderado,astar,h1,ok,58,20,1604,15980,579,0,0,,0.5998,0.9
+media,media_05,6,13,0,19,ponderado,astar,h2,ok,58,19,1504,14749,542,0,0,,0.6575,0.855
+media,media_05,6,13,0,19,ponderado,astar,h3,ok,58,20,1470,14312,456,0,0,,0.5693,0.801
+media,media_05,6,13,0,19,ponderado,astar,h4,ok,58,21,1253,11807,379,0,0,,0.5782,0.731
+media,media_05,6,13,0,19,ponderado,idastar_simples,h4,falhou (tempo),,,87767,655907,10,87603,15,0,60.0089,0.072
+media,media_05,6,13,0,19,ponderado,idastar,h4,ok,58,28,49163,394651,29,47841,44,198641,40.163,0.636
+media,media_06,6,11,1,22,movimentos,bfs,—,ok,22,22,6522,68649,1924,0,0,,0.9952,2.253
+media,media_06,6,11,1,22,movimentos,dfs,—,falhou (tempo),,,215643,2325117,51,0,0,,60.0009,0.089
+media,media_06,6,11,1,22,movimentos,ids,—,falhou (tempo),,,247971,2699338,8,247041,8,,60.0005,0.179
+media,media_06,6,11,1,22,movimentos,ucs,—,ok,22,22,8442,94238,2726,0,0,,2.7022,3.913
+media,media_06,6,11,1,22,movimentos,gulosa,h1,ok,28,28,4133,37742,1409,0,0,,0.7051,1.717
+media,media_06,6,11,1,22,movimentos,gulosa,h2,ok,23,23,2711,24948,1229,0,0,,0.5651,1.392
+media,media_06,6,11,1,22,movimentos,astar,h0,ok,22,22,8442,94238,2726,0,0,,1.3639,4.714
+media,media_06,6,11,1,22,movimentos,astar,h1,ok,22,22,4614,43967,1645,0,0,,0.8072,2.322
+media,media_06,6,11,1,22,movimentos,astar,h2,ok,22,22,4071,38546,1176,0,0,,0.8262,1.729
+media,media_06,6,11,1,22,movimentos,astar,h3,ok,22,22,4283,39879,682,0,0,,0.7091,1.447
+media,media_06,6,11,1,22,movimentos,astar,h4,ok,22,22,4283,39879,682,0,0,,0.8519,1.447
+media,media_06,6,11,1,22,movimentos,idastar_simples,h4,falhou (tempo),,,117015,1185741,8,116462,7,0,60.014,0.146
+media,media_06,6,11,1,22,movimentos,idastar,h4,falhou (tempo),,,80939,810039,17,77766,16,462887,60.0292,1.168
+media,media_06,6,11,1,22,ponderado,bfs,—,ok,76,22,6522,68649,1924,0,0,,0.9216,2.253
+media,media_06,6,11,1,22,ponderado,dfs,—,falhou (tempo),,,264217,2845472,51,0,0,,60.0026,0.089
+media,media_06,6,11,1,22,ponderado,ids,—,falhou (tempo),,,278685,3020645,8,277755,8,,60.0015,0.179
+media,media_06,6,11,1,22,ponderado,ucs,—,ok,76,23,6651,69105,1990,0,0,,1.0024,2.828
+media,media_06,6,11,1,22,ponderado,gulosa,h1,ok,94,28,4188,38398,1486,0,0,,0.679,1.987
+media,media_06,6,11,1,22,ponderado,gulosa,h2,ok,84,23,2711,24948,1200,0,0,,0.5602,1.361
+media,media_06,6,11,1,22,ponderado,astar,h0,ok,76,23,6651,69105,1990,0,0,,1.0367,3.291
+media,media_06,6,11,1,22,ponderado,astar,h1,ok,76,25,5932,59730,1790,0,0,,1.0299,3.019
+media,media_06,6,11,1,22,ponderado,astar,h2,ok,76,25,5670,56666,1776,0,0,,1.1905,2.954
+media,media_06,6,11,1,22,ponderado,astar,h3,ok,76,25,5627,55914,1641,0,0,,0.9748,2.864
+media,media_06,6,11,1,22,ponderado,astar,h4,ok,76,27,4099,38301,585,0,0,,0.8683,1.365
+media,media_06,6,11,1,22,ponderado,idastar_simples,h4,falhou (tempo),,,121080,1144520,12,120747,9,0,60.0147,0.125
+media,media_06,6,11,1,22,ponderado,idastar,h4,falhou (tempo),,,94477,942377,27,91274,24,542813,60.0068,1.168
+media,media_07,6,12,0,17,movimentos,bfs,—,ok,17,17,15410,203919,3181,0,0,,2.6294,3.998
+media,media_07,6,12,0,17,movimentos,dfs,—,falhou (tempo),,,257446,3218878,51,0,0,,60.01,0.094
+media,media_07,6,12,0,17,movimentos,ids,—,falhou (tempo),,,316170,3958054,8,314760,8,,60.0035,0.349
+media,media_07,6,12,0,17,movimentos,ucs,—,ok,17,17,17230,228153,3181,0,0,,3.4017,4.861
+media,media_07,6,12,0,17,movimentos,gulosa,h1,ok,18,18,2094,24285,1782,0,0,,0.4757,1.598
+media,media_07,6,12,0,17,movimentos,gulosa,h2,ok,18,18,1899,22008,1660,0,0,,0.5429,1.513
+media,media_07,6,12,0,17,movimentos,astar,h0,ok,17,17,17230,228153,3181,0,0,,3.1898,5.695
+media,media_07,6,12,0,17,movimentos,astar,h1,ok,17,17,8771,109577,5390,0,0,,1.8287,6.532
+media,media_07,6,12,0,17,movimentos,astar,h2,ok,17,17,6114,74445,3910,0,0,,1.5657,4.572
+media,media_07,6,12,0,17,movimentos,astar,h3,ok,17,17,6645,80773,3810,0,0,,1.3626,4.627
+media,media_07,6,12,0,17,movimentos,astar,h4,ok,17,17,6645,80773,3810,0,0,,1.6335,4.627
+media,media_07,6,12,0,17,movimentos,idastar_simples,h4,falhou (tempo),,,99607,1189652,8,98910,7,0,60.0024,0.175
+media,media_07,6,12,0,17,movimentos,idastar,h4,falhou (tempo),,,81869,963736,16,76849,15,544122,60.0139,2.031
+media,media_07,6,12,0,17,ponderado,bfs,—,ok,65,17,15410,203919,3181,0,0,,2.512,3.998
+media,media_07,6,12,0,17,ponderado,dfs,—,falhou (tempo),,,253413,3167598,51,0,0,,60.0047,0.094
+media,media_07,6,12,0,17,ponderado,ids,—,falhou (tempo),,,309706,3877161,8,308296,8,,60.0002,0.349
+media,media_07,6,12,0,17,ponderado,ucs,—,ok,64,21,18082,239079,3441,0,0,,3.6128,5.06
+media,media_07,6,12,0,17,ponderado,gulosa,h1,ok,66,18,2132,24728,1718,0,0,,0.4582,1.551
+media,media_07,6,12,0,17,ponderado,gulosa,h2,ok,66,18,1931,22389,1596,0,0,,0.5343,1.464
+media,media_07,6,12,0,17,ponderado,astar,h0,ok,64,21,18082,239079,3441,0,0,,3.6493,5.92
+media,media_07,6,12,0,17,ponderado,astar,h1,ok,64,21,17934,237281,3546,0,0,,3.9617,5.922
+media,media_07,6,12,0,17,ponderado,astar,h2,ok,64,21,17904,236946,3564,0,0,,4.6548,5.912
+media,media_07,6,12,0,17,ponderado,astar,h3,ok,64,21,17747,234908,3546,0,0,,3.9622,5.922
+media,media_07,6,12,0,17,ponderado,astar,h4,ok,64,21,12834,169193,4106,0,0,,3.4953,6.347
+media,media_07,6,12,0,17,ponderado,idastar_simples,h4,falhou (tempo),,,91904,1110177,8,91422,10,0,60.0084,0.146
+media,media_07,6,12,0,17,ponderado,idastar,h4,falhou (tempo),,,76053,902063,17,73967,29,488623,60.0185,0.839
+media,media_08,6,13,0,16,movimentos,bfs,—,ok,16,16,842,6853,525,0,0,,0.1144,0.527
+media,media_08,6,13,0,16,movimentos,dfs,—,falhou (tempo),,,364220,2170986,51,0,0,,60.0082,0.066
+media,media_08,6,13,0,16,movimentos,ids,—,falhou (tempo),,,426436,2646264,10,426284,10,,60.0069,0.061
+media,media_08,6,13,0,16,movimentos,ucs,—,ok,16,16,1368,12146,815,0,0,,0.1971,0.914
+media,media_08,6,13,0,16,movimentos,gulosa,h1,ok,22,22,627,4341,254,0,0,,0.0951,0.317
+media,media_08,6,13,0,16,movimentos,gulosa,h2,ok,17,17,184,1118,116,0,0,,0.0327,0.124
+media,media_08,6,13,0,16,movimentos,astar,h0,ok,16,16,1368,12146,815,0,0,,0.2031,1.058
+media,media_08,6,13,0,16,movimentos,astar,h1,ok,16,16,376,2528,285,0,0,,0.0617,0.312
+media,media_08,6,13,0,16,movimentos,astar,h2,ok,16,16,249,1572,174,0,0,,0.0449,0.197
+media,media_08,6,13,0,16,movimentos,astar,h3,ok,16,16,360,2338,187,0,0,,0.0596,0.254
+media,media_08,6,13,0,16,movimentos,astar,h4,ok,16,16,360,2338,187,0,0,,0.0674,0.254
+media,media_08,6,13,0,16,movimentos,idastar_simples,h4,falhou (tempo),,,179752,1114504,10,179600,9,0,60.0087,0.068
+media,media_08,6,13,0,16,movimentos,idastar,h4,ok,16,16,6066,35119,17,5730,14,14975,2.137,0.185
+media,media_08,6,13,0,16,ponderado,bfs,—,ok,54,16,842,6853,525,0,0,,0.1111,0.527
+media,media_08,6,13,0,16,ponderado,dfs,—,falhou (tempo),,,381145,2271769,51,0,0,,60.0084,0.066
+media,media_08,6,13,0,16,ponderado,ids,—,falhou (tempo),,,485582,3014010,11,485425,11,,60.0018,0.065
+media,media_08,6,13,0,16,ponderado,ucs,—,ok,54,18,1868,17743,1203,0,0,,0.2443,1.29
+media,media_08,6,13,0,16,ponderado,gulosa,h1,ok,86,22,627,4341,254,0,0,,0.0877,0.317
+media,media_08,6,13,0,16,ponderado,gulosa,h2,ok,54,17,184,1118,115,0,0,,0.0305,0.124
+media,media_08,6,13,0,16,ponderado,astar,h0,ok,54,18,1868,17743,1203,0,0,,0.2864,1.54
+media,media_08,6,13,0,16,ponderado,astar,h1,ok,54,18,1432,13286,1022,0,0,,0.2621,1.198
+media,media_08,6,13,0,16,ponderado,astar,h2,ok,54,18,1274,11842,1050,0,0,,0.2793,1.192
+media,media_08,6,13,0,16,ponderado,astar,h3,ok,54,18,1239,11314,936,0,0,,0.2085,1.128
+media,media_08,6,13,0,16,ponderado,astar,h4,ok,54,19,293,1798,129,0,0,,0.0469,0.185
+media,media_08,6,13,0,16,ponderado,idastar_simples,h4,falhou (tempo),,,174113,1131781,11,173991,15,0,60.0073,0.065
+media,media_08,6,13,0,16,ponderado,idastar,h4,ok,54,24,19030,109609,25,18710,37,49719,6.1875,0.211
+media,media_09,6,12,1,38,movimentos,bfs,—,ok,38,38,5499,58142,893,0,0,,0.6798,1.757
+media,media_09,6,12,1,38,movimentos,dfs,—,falhou (tempo),,,363312,3146143,51,0,0,,60.008,0.075
+media,media_09,6,12,1,38,movimentos,ids,—,falhou (tempo),,,447112,3682137,9,446830,9,,60.003,0.076
+media,media_09,6,12,1,38,movimentos,ucs,—,ok,38,38,6391,69278,1019,0,0,,1.0361,2.327
+media,media_09,6,12,1,38,movimentos,gulosa,h1,ok,41,41,1984,18760,1358,0,0,,0.3775,1.311
+media,media_09,6,12,1,38,movimentos,gulosa,h2,ok,44,44,1701,16586,1743,0,0,,0.4596,1.493
+media,media_09,6,12,1,38,movimentos,astar,h0,ok,38,38,6391,69278,1019,0,0,,1.0462,2.701
+media,media_09,6,12,1,38,movimentos,astar,h1,ok,38,38,4275,43286,966,0,0,,0.7508,1.87
+media,media_09,6,12,1,38,movimentos,astar,h2,ok,38,38,3953,39631,829,16,0,,0.7697,1.565
+media,media_09,6,12,1,38,movimentos,astar,h3,ok,38,38,3992,40047,803,0,0,,0.6676,1.568
+media,media_09,6,12,1,38,movimentos,astar,h4,ok,38,38,3992,40047,803,0,0,,0.8085,1.568
+media,media_09,6,12,1,38,movimentos,idastar_simples,h4,falhou (tempo),,,132338,1128492,10,132074,8,0,60.0084,0.087
+media,media_09,6,12,1,38,movimentos,idastar,h4,falhou (tempo),,,114089,989203,27,111956,25,609118,60.0184,0.862
+media,media_09,6,12,1,38,ponderado,bfs,—,ok,144,38,5499,58142,893,0,0,,0.9544,1.757
+media,media_09,6,12,1,38,ponderado,dfs,—,falhou (tempo),,,320006,2784392,51,0,0,,60.0064,0.075
+media,media_09,6,12,1,38,ponderado,ids,—,falhou (tempo),,,393975,3234784,9,393693,9,,60.0044,0.076
+media,media_09,6,12,1,38,ponderado,ucs,—,ok,144,44,8122,90751,1033,0,0,,1.3643,2.636
+media,media_09,6,12,1,38,ponderado,gulosa,h1,ok,158,41,1990,18827,1328,0,0,,0.3478,1.292
+media,media_09,6,12,1,38,ponderado,gulosa,h2,ok,164,44,1701,16586,1725,0,0,,0.4132,1.481
+media,media_09,6,12,1,38,ponderado,astar,h0,ok,144,44,8122,90751,1033,0,0,,1.4198,3.008
+media,media_09,6,12,1,38,ponderado,astar,h1,ok,144,42,7752,86297,1081,0,0,,1.5186,3.008
+media,media_09,6,12,1,38,ponderado,astar,h2,ok,144,43,7615,84668,1094,0,0,,1.8181,2.936
+media,media_09,6,12,1,38,ponderado,astar,h3,ok,144,42,7490,83035,1081,0,0,,1.6941,2.988
+media,media_09,6,12,1,38,ponderado,astar,h4,ok,144,46,5048,52470,1133,0,0,,1.4937,2.702
+media,media_09,6,12,1,38,ponderado,idastar_simples,h4,falhou (tempo),,,116610,1018772,13,116437,8,0,60.0101,0.084
+media,media_09,6,12,1,38,ponderado,idastar,h4,falhou (tempo),,,112495,948440,33,111372,49,553557,60.0105,0.452
+media,media_10,7,11,1,17,movimentos,bfs,—,ok,17,17,27646,405324,5714,0,0,,5.0263,6.975
+media,media_10,7,11,1,17,movimentos,dfs,—,falhou (tempo),,,212746,3370352,51,0,0,,60.0097,0.108
+media,media_10,7,11,1,17,movimentos,ids,—,falhou (tempo),,,270956,4014990,7,267613,7,,60.0016,0.587
+media,media_10,7,11,1,17,movimentos,ucs,—,ok,17,17,28282,413427,5714,0,0,,6.8323,8.393
+media,media_10,7,11,1,17,movimentos,gulosa,h1,ok,20,20,26801,395585,9128,0,0,,6.5882,9.385
+media,media_10,7,11,1,17,movimentos,gulosa,h2,ok,23,23,26058,386316,9294,0,0,,7.4669,9.746
+media,media_10,7,11,1,17,movimentos,astar,h0,ok,17,17,28282,413427,5714,0,0,,6.2608,10.014
+media,media_10,7,11,1,17,movimentos,astar,h1,ok,17,17,27514,403808,8251,0,0,,6.8764,10.696
+media,media_10,7,11,1,17,movimentos,astar,h2,ok,17,17,26409,391047,9293,12,0,,6.8546,11.413
+media,media_10,7,11,1,17,movimentos,astar,h3,ok,17,17,26883,396503,8251,0,0,,5.8228,10.696
+media,media_10,7,11,1,17,movimentos,astar,h4,ok,17,17,26883,396503,8251,0,0,,6.2938,10.696
+media,media_10,7,11,1,17,movimentos,idastar_simples,h4,falhou (tempo),,,91310,1424640,7,89406,5,0,60.0033,0.423
+media,media_10,7,11,1,17,movimentos,idastar,h4,falhou (tempo),,,80893,1277360,11,65794,9,483167,60.0051,4.357
+media,media_10,7,11,1,17,ponderado,bfs,—,ok,64,17,27646,405324,5714,0,0,,5.619,6.975
+media,media_10,7,11,1,17,ponderado,dfs,—,falhou (tempo),,,215333,3405072,51,0,0,,60.0007,0.108
+media,media_10,7,11,1,17,ponderado,ids,—,falhou (tempo),,,274266,4068528,7,270889,7,,60.0023,0.592
+media,media_10,7,11,1,17,ponderado,ucs,—,ok,64,17,27771,407538,6187,0,0,,6.0015,8.376
+media,media_10,7,11,1,17,ponderado,gulosa,h1,ok,64,21,26606,393299,9128,0,0,,6.0332,9.362
+media,media_10,7,11,1,17,ponderado,gulosa,h2,ok,64,21,25972,385402,9122,0,0,,6.2838,9.515
+media,media_10,7,11,1,17,ponderado,astar,h0,ok,64,17,27771,407538,6187,0,0,,5.6498,9.994
+media,media_10,7,11,1,17,ponderado,astar,h1,ok,64,20,27507,404320,6348,0,0,,6.4425,9.967
+media,media_10,7,11,1,17,ponderado,astar,h2,ok,64,17,27365,402698,6681,0,0,,6.6495,10.019
+media,media_10,7,11,1,17,ponderado,astar,h3,ok,64,20,27344,402373,6348,0,0,,6.216,9.967
+media,media_10,7,11,1,17,ponderado,astar,h4,ok,64,21,25558,381159,8685,0,0,,6.5237,10.76
+media,media_10,7,11,1,17,ponderado,idastar_simples,h4,falhou (tempo),,,93936,1449651,9,93435,8,0,60.0015,0.165
+media,media_10,7,11,1,17,ponderado,idastar,h4,falhou (tempo),,,81681,1279514,16,74354,22,465216,60.0042,2.553
+grande,grande_01,8,14,3,17,movimentos,bfs,—,ok,17,17,57735,859357,23701,0,0,,8.9107,26.667
+grande,grande_01,8,14,3,17,movimentos,dfs,—,falhou (tempo),,,274699,2716193,51,0,0,,60.0005,0.086
+grande,grande_01,8,14,3,17,movimentos,ids,—,falhou (tempo),,,347510,3298949,9,346826,9,,60.0003,0.168
+grande,grande_01,8,14,3,17,movimentos,ucs,—,ok,17,17,81433,1233268,34659,0,0,,16.8846,43.611
+grande,grande_01,8,14,3,17,movimentos,gulosa,h1,ok,18,18,8382,115085,7506,0,0,,2.312,6.55
+grande,grande_01,8,14,3,17,movimentos,gulosa,h2,ok,22,22,8675,118557,7671,0,0,,3.4672,6.713
+grande,grande_01,8,14,3,17,movimentos,astar,h0,ok,17,17,81433,1233268,34659,0,0,,20.6815,51.664
+grande,grande_01,8,14,3,17,movimentos,astar,h1,ok,17,17,36168,526478,31213,0,0,,9.5577,33.716
+grande,grande_01,8,14,3,17,movimentos,astar,h2,ok,17,17,23242,333756,23886,4,0,,6.8437,24.045
+grande,grande_01,8,14,3,17,movimentos,astar,h3,ok,17,17,26511,380759,24819,0,0,,6.8539,28.618
+grande,grande_01,8,14,3,17,movimentos,astar,h4,ok,17,17,26511,380759,24819,0,0,,7.4715,28.618
+grande,grande_01,8,14,3,17,movimentos,idastar_simples,h4,falhou (tempo),,,114616,1097113,9,114070,7,0,60.0117,0.162
+grande,grande_01,8,14,3,17,movimentos,idastar,h4,falhou (tempo),,,90194,1129913,16,74491,14,441994,60.0048,4.936
+grande,grande_01,8,14,3,17,ponderado,bfs,—,ok,82,17,57735,859357,23701,0,0,,10.6154,26.667
+grande,grande_01,8,14,3,17,ponderado,dfs,—,falhou (tempo),,,296671,2929881,51,0,0,,60.0024,0.085
+grande,grande_01,8,14,3,17,ponderado,ids,—,falhou (tempo),,,336747,3195597,9,336067,9,,60.0038,0.166
+grande,grande_01,8,14,3,17,ponderado,ucs,—,ok,70,20,94021,1410856,43011,0,0,,19.3937,48.319
+grande,grande_01,8,14,3,17,ponderado,gulosa,h1,ok,72,18,8382,115085,7509,0,0,,1.9312,6.551
+grande,grande_01,8,14,3,17,ponderado,gulosa,h2,ok,84,22,8676,118567,7665,0,0,,2.2705,6.707
+grande,grande_01,8,14,3,17,ponderado,astar,h0,ok,70,20,94021,1410856,43011,0,0,,22.5042,57.257
+grande,grande_01,8,14,3,17,ponderado,astar,h1,ok,70,20,80794,1200320,36085,0,0,,22.191,51.434
+grande,grande_01,8,14,3,17,ponderado,astar,h2,ok,70,20,74068,1095455,33758,0,0,,23.6362,46.272
+grande,grande_01,8,14,3,17,ponderado,astar,h3,ok,70,20,74755,1105884,34053,0,0,,20.8821,46.531
+grande,grande_01,8,14,3,17,ponderado,astar,h4,ok,70,21,32405,457414,25466,0,0,,10.3745,29.334
+grande,grande_01,8,14,3,17,ponderado,idastar_simples,h4,falhou (tempo),,,91860,855283,12,91697,9,0,60.0026,0.09
+grande,grande_01,8,14,3,17,ponderado,idastar,h4,falhou (tempo),,,76362,839002,23,71957,31,357672,60.0049,1.603
+grande,grande_02,7,16,2,15,movimentos,bfs,—,ok,15,15,13032,162311,2293,0,0,,2.5042,3.372
+grande,grande_02,7,16,2,15,movimentos,dfs,—,falhou (tempo),,,198035,2796406,51,0,0,,60.0027,0.104
+grande,grande_02,7,16,2,15,movimentos,ids,—,falhou (tempo),,,253338,3294352,8,251450,8,,60.0052,0.473
+grande,grande_02,7,16,2,15,movimentos,ucs,—,ok,15,15,14291,178396,2689,0,0,,3.1973,5.023
+grande,grande_02,7,16,2,15,movimentos,gulosa,h1,ok,18,18,9790,121362,3810,0,0,,2.288,5.259
+grande,grande_02,7,16,2,15,movimentos,gulosa,h2,ok,18,18,3795,43918,3572,0,0,,1.0209,3.249
+grande,grande_02,7,16,2,15,movimentos,astar,h0,ok,15,15,14291,178396,2689,0,0,,3.6991,5.831
+grande,grande_02,7,16,2,15,movimentos,astar,h1,ok,15,15,12713,159129,2615,0,0,,4.0765,5.32
+grande,grande_02,7,16,2,15,movimentos,astar,h2,ok,15,15,10851,137557,3356,0,0,,3.317,5.861
+grande,grande_02,7,16,2,15,movimentos,astar,h3,ok,15,15,12045,151009,2615,0,0,,3.1574,5.286
+grande,grande_02,7,16,2,15,movimentos,astar,h4,ok,15,15,12045,151009,2615,0,0,,3.1174,5.286
+grande,grande_02,7,16,2,15,movimentos,idastar_simples,h4,falhou (tempo),,,90955,1197321,8,89600,5,0,60.0026,0.409
+grande,grande_02,7,16,2,15,movimentos,idastar,h4,falhou (tempo),,,84887,1102998,13,75440,10,525738,60.0083,3.913
+grande,grande_02,7,16,2,15,ponderado,bfs,—,ok,58,15,13032,162311,2293,0,0,,2.4018,3.372
+grande,grande_02,7,16,2,15,ponderado,dfs,—,falhou (tempo),,,212534,3004506,51,0,0,,60.0015,0.103
+grande,grande_02,7,16,2,15,ponderado,ids,—,falhou (tempo),,,284836,3698393,8,282948,8,,60.0028,0.473
+grande,grande_02,7,16,2,15,ponderado,ucs,—,ok,58,15,16697,212385,6317,0,0,,3.6062,8.28
+grande,grande_02,7,16,2,15,ponderado,gulosa,h1,ok,58,18,9790,121362,3810,0,0,,2.3108,5.259
+grande,grande_02,7,16,2,15,ponderado,gulosa,h2,ok,58,18,3795,43918,3572,0,0,,1.0316,3.248
+grande,grande_02,7,16,2,15,ponderado,astar,h0,ok,58,15,16697,212385,6317,0,0,,3.91,10.051
+grande,grande_02,7,16,2,15,ponderado,astar,h1,ok,58,16,15664,197815,5596,0,0,,3.8456,7.949
+grande,grande_02,7,16,2,15,ponderado,astar,h2,ok,58,16,15321,193106,5094,0,0,,4.1073,7.563
+grande,grande_02,7,16,2,15,ponderado,astar,h3,ok,58,16,15078,189390,4450,0,0,,3.5326,7.125
+grande,grande_02,7,16,2,15,ponderado,astar,h4,ok,58,19,12279,153316,2719,0,0,,2.7095,5.453
+grande,grande_02,7,16,2,15,ponderado,idastar_simples,h4,falhou (tempo),,,106103,1258119,10,105635,12,0,60.0045,0.167
+grande,grande_02,7,16,2,15,ponderado,idastar,h4,falhou (tempo),,,93550,1185542,18,87359,28,535584,60.0145,2.825
+grande,grande_03,8,21,3,23,movimentos,bfs,—,ok,23,23,52670,802562,31008,0,0,,11.1666,32.133
+grande,grande_03,8,21,3,23,movimentos,dfs,—,falhou (tempo),,,237937,2578402,51,0,0,,60.0064,0.09
+grande,grande_03,8,21,3,23,movimentos,ids,—,falhou (tempo),,,303846,3000852,8,303368,8,,60.0047,0.16
+grande,grande_03,8,21,3,23,movimentos,ucs,—,ok,23,23,83680,1335129,47702,0,0,,19.6949,58.098
+grande,grande_03,8,21,3,23,movimentos,gulosa,h1,ok,29,29,3051,35233,4955,0,0,,0.8052,3.963
+grande,grande_03,8,21,3,23,movimentos,gulosa,h2,ok,30,30,2738,31618,3346,0,0,,0.891,2.971
+grande,grande_03,8,21,3,23,movimentos,astar,h0,ok,23,23,83680,1335129,47702,0,0,,20.3231,67.465
+grande,grande_03,8,21,3,23,movimentos,astar,h1,ok,23,23,15583,208099,16659,0,0,,4.1961,18.64
+grande,grande_03,8,21,3,23,movimentos,astar,h2,ok,23,23,6786,86516,9467,65,0,,2.3299,9.575
+grande,grande_03,8,21,3,23,movimentos,astar,h3,ok,23,23,10119,129788,11012,0,0,,2.6914,11.806
+grande,grande_03,8,21,3,23,movimentos,astar,h4,ok,23,23,10119,129788,11012,0,0,,3.2845,11.806
+grande,grande_03,8,21,3,23,movimentos,idastar_simples,h4,falhou (tempo),,,102949,1056208,8,102668,5,0,60.008,0.116
+grande,grande_03,8,21,3,23,movimentos,idastar,h4,falhou (tempo),,,75898,830510,19,72726,16,489127,60.0183,1.624
+grande,grande_03,8,21,3,23,ponderado,bfs,—,ok,90,23,52670,802562,31008,0,0,,11.1548,32.133
+grande,grande_03,8,21,3,23,ponderado,dfs,—,falhou (tempo),,,232619,2526321,51,0,0,,60.0021,0.09
+grande,grande_03,8,21,3,23,ponderado,ids,—,falhou (tempo),,,296424,2928856,8,295946,8,,60.0052,0.16
+grande,grande_03,8,21,3,23,ponderado,ucs,—,ok,88,25,225867,3668742,93183,0,0,,56.0142,126.083
+grande,grande_03,8,21,3,23,ponderado,gulosa,h1,ok,90,29,3194,37121,5299,0,0,,0.8562,4.171
+grande,grande_03,8,21,3,23,ponderado,gulosa,h2,ok,90,30,2810,32589,3504,0,0,,0.9341,3.062
+grande,grande_03,8,21,3,23,ponderado,astar,h0,ok,88,25,225867,3668742,93183,0,0,,57.8443,144.503
+grande,grande_03,8,21,3,23,ponderado,astar,h1,ok,88,26,165465,2679701,84575,0,0,,49.7003,127.796
+grande,grande_03,8,21,3,23,ponderado,astar,h2,ok,88,26,143567,2320973,81597,0,0,,52.5004,114.781
+grande,grande_03,8,21,3,23,ponderado,astar,h3,ok,88,26,150049,2426743,81875,0,0,,44.8369,117.155
+grande,grande_03,8,21,3,23,ponderado,astar,h4,ok,88,31,30790,439767,30641,0,0,,11.1482,35.494
+grande,grande_03,8,21,3,23,ponderado,idastar_simples,h4,falhou (tempo),,,104458,992026,10,104249,9,0,60.0112,0.11
+grande,grande_03,8,21,3,23,ponderado,idastar,h4,falhou (tempo),,,76849,808437,25,75048,39,433418,60.0007,1.018
+grande,grande_04,7,18,1,36,movimentos,bfs,—,ok,36,36,173846,2055344,9319,0,0,,27.8174,46.395
+grande,grande_04,7,18,1,36,movimentos,dfs,—,falhou (tempo),,,249649,3054093,51,0,0,,60.0039,0.096
+grande,grande_04,7,18,1,36,movimentos,ids,—,falhou (tempo),,,299210,3793610,8,296263,8,,60.0037,0.696
+grande,grande_04,7,18,1,36,movimentos,ucs,—,ok,36,36,183136,2163887,10030,0,0,,31.9961,60.602
+grande,grande_04,7,18,1,36,movimentos,gulosa,h1,ok,45,45,102880,1242220,28304,0,0,,21.8704,45.166
+grande,grande_04,7,18,1,36,movimentos,gulosa,h2,ok,46,46,93390,1119730,27339,0,0,,22.1865,46.578
+grande,grande_04,7,18,1,36,movimentos,astar,h0,ok,36,36,183136,2163887,10030,0,0,,33.4827,71.419
+grande,grande_04,7,18,1,36,movimentos,astar,h1,ok,36,36,163036,1931474,17104,0,0,,34.5309,67.731
+grande,grande_04,7,18,1,36,movimentos,astar,h2,ok,36,36,139689,1662910,21968,0,0,,32.9697,62.578
+grande,grande_04,7,18,1,36,movimentos,astar,h3,ok,36,36,155404,1844304,17104,0,0,,33.2868,59.527
+grande,grande_04,7,18,1,36,movimentos,astar,h4,ok,36,36,155404,1844304,17104,0,0,,35.8674,59.527
+grande,grande_04,7,18,1,36,movimentos,idastar_simples,h4,falhou (tempo),,,100739,1211823,8,99459,6,0,60.0131,0.423
+grande,grande_04,7,18,1,36,movimentos,idastar,h4,falhou (tempo),,,89523,1120870,13,76312,11,478835,60.0054,5.238
+grande,grande_04,7,18,1,36,ponderado,bfs,—,ok,124,36,173846,2055344,9319,0,0,,28.2749,46.395
+grande,grande_04,7,18,1,36,ponderado,dfs,—,falhou (tempo),,,249013,3046833,51,0,0,,60.0014,0.096
+grande,grande_04,7,18,1,36,ponderado,ids,—,falhou (tempo),,,298430,3783741,8,295483,8,,60.003,0.696
+grande,grande_04,7,18,1,36,ponderado,ucs,—,ok,124,39,205704,2444084,14224,0,0,,37.003,66.528
+grande,grande_04,7,18,1,36,ponderado,gulosa,h1,ok,152,45,103238,1246012,27997,0,0,,21.7617,44.744
+grande,grande_04,7,18,1,36,ponderado,gulosa,h2,ok,152,46,93581,1121797,26850,0,0,,22.2639,45.56
+grande,grande_04,7,18,1,36,ponderado,astar,h0,ok,124,39,205704,2444084,14224,0,0,,38.6825,77.792
+grande,grande_04,7,18,1,36,ponderado,astar,h1,ok,124,39,197819,2346197,14883,0,0,,42.461,77.101
+grande,grande_04,7,18,1,36,ponderado,astar,h2,ok,124,39,189858,2247467,14720,0,0,,44.4032,75.284
+grande,grande_04,7,18,1,36,ponderado,astar,h3,ok,124,39,193848,2297672,14883,0,0,,41.5365,76.229
+grande,grande_04,7,18,1,36,ponderado,astar,h4,ok,124,44,159664,1897289,13983,0,0,,38.5204,61.832
+grande,grande_04,7,18,1,36,ponderado,idastar_simples,h4,falhou (tempo),,,87785,1104644,8,86991,7,0,60.0051,0.228
+grande,grande_04,7,18,1,36,ponderado,idastar,h4,falhou (tempo),,,80086,1012211,15,70270,18,421041,60.0067,4.171
+grande,grande_05,7,15,2,30,movimentos,bfs,—,ok,30,30,157532,2402112,23687,0,0,,28.287,40.71
+grande,grande_05,7,15,2,30,movimentos,dfs,—,falhou (tempo),,,277217,3137039,51,0,0,,60.0042,0.088
+grande,grande_05,7,15,2,30,movimentos,ids,—,falhou (tempo),,,346076,3845309,8,343745,8,,60.0038,0.528
+grande,grande_05,7,15,2,30,movimentos,ucs,—,ok,30,30,169829,2604132,23687,0,0,,34.0399,58.138
+grande,grande_05,7,15,2,30,movimentos,gulosa,h1,ok,38,38,33596,440065,35776,0,0,,7.4899,30.489
+grande,grande_05,7,15,2,30,movimentos,gulosa,h2,ok,40,40,46445,634414,39811,0,0,,13.1822,35.44
+grande,grande_05,7,15,2,30,movimentos,astar,h0,ok,30,30,169829,2604132,23687,0,0,,35.6628,69.414
+grande,grande_05,7,15,2,30,movimentos,astar,h1,ok,30,30,143305,2173681,49383,0,0,,34.1931,62.818
+grande,grande_05,7,15,2,30,movimentos,astar,h2,ok,31,31,142324,2151543,52616,579,0,,39.9508,65.826
+grande,grande_05,7,15,2,30,movimentos,astar,h3,ok,30,30,140214,2123856,49383,0,0,,32.5006,62.818
+grande,grande_05,7,15,2,30,movimentos,astar,h4,ok,30,30,140214,2123856,49383,0,0,,37.5771,62.818
+grande,grande_05,7,15,2,30,movimentos,idastar_simples,h4,falhou (tempo),,,88134,998249,8,87011,5,0,60.0093,0.258
+grande,grande_05,7,15,2,30,movimentos,idastar,h4,falhou (tempo),,,77920,931075,14,63210,10,338595,60.016,4.602
+grande,grande_05,7,15,2,30,ponderado,bfs,—,ok,115,30,157532,2402112,23687,0,0,,29.0209,40.71
+grande,grande_05,7,15,2,30,ponderado,dfs,—,falhou (tempo),,,275903,3122326,51,0,0,,60.0049,0.088
+grande,grande_05,7,15,2,30,ponderado,ids,—,falhou (tempo),,,343809,3819590,8,341478,8,,60.0021,0.527
+grande,grande_05,7,15,2,30,ponderado,ucs,—,ok,113,32,177506,2686372,29858,0,0,,35.8062,58.556
+grande,grande_05,7,15,2,30,ponderado,gulosa,h1,ok,145,38,33924,444595,35806,0,0,,7.5178,30.463
+grande,grande_05,7,15,2,30,ponderado,gulosa,h2,ok,123,40,46488,634985,38108,0,0,,12.8492,34.476
+grande,grande_05,7,15,2,30,ponderado,astar,h0,ok,113,32,177506,2686372,29858,0,0,,37.1532,70.272
+grande,grande_05,7,15,2,30,ponderado,astar,h1,ok,113,33,169182,2550910,28398,0,0,,39.1434,69.31
+grande,grande_05,7,15,2,30,ponderado,astar,h2,ok,113,34,165316,2491517,28400,0,0,,45.1938,69.455
+grande,grande_05,7,15,2,30,ponderado,astar,h3,ok,113,33,166066,2502300,28398,0,0,,38.4569,69.31
+grande,grande_05,7,15,2,30,ponderado,astar,h4,ok,113,37,145324,2184466,44423,0,0,,39.9783,61.481
+grande,grande_05,7,15,2,30,ponderado,idastar_simples,h4,falhou (tempo),,,90184,925560,10,89668,9,0,60.0092,0.172
+grande,grande_05,7,15,2,30,ponderado,idastar,h4,falhou (tempo),,,73584,823456,19,66174,22,324264,60.0268,2.962
+grande,grande_06,7,16,0,28,movimentos,bfs,—,ok,28,28,19760,205457,6565,0,0,,2.8434,9.311
+grande,grande_06,7,16,0,28,movimentos,dfs,—,falhou (tempo),,,315837,2537912,51,0,0,,60.0043,0.067
+grande,grande_06,7,16,0,28,movimentos,ids,—,falhou (tempo),,,447180,2116922,13,447059,13,,60.0036,0.066
+grande,grande_06,7,16,0,28,movimentos,ucs,—,ok,28,28,26324,282164,8895,0,0,,4.299,13.944
+grande,grande_06,7,16,0,28,movimentos,gulosa,h1,ok,44,44,50400,569456,13546,0,0,,11.4145,21.956
+grande,grande_06,7,16,0,28,movimentos,gulosa,h2,ok,34,34,32163,360466,10661,0,0,,8.3604,15.55
+grande,grande_06,7,16,0,28,movimentos,astar,h0,ok,28,28,26324,282164,8895,0,0,,4.6313,16.009
+grande,grande_06,7,16,0,28,movimentos,astar,h1,ok,28,28,14500,146076,5735,0,0,,3.1032,8.764
+grande,grande_06,7,16,0,28,movimentos,astar,h2,ok,28,28,9204,86808,4144,22,0,,1.958,6.421
+grande,grande_06,7,16,0,28,movimentos,astar,h3,ok,28,28,13882,140746,5400,0,0,,2.9384,8.43
+grande,grande_06,7,16,0,28,movimentos,astar,h4,ok,28,28,13882,140746,5400,0,0,,3.0826,8.43
+grande,grande_06,7,16,0,28,movimentos,idastar_simples,h4,falhou (tempo),,,220821,1057734,14,220702,12,0,60.0217,0.074
+grande,grande_06,7,16,0,28,movimentos,idastar,h4,falhou (tempo),,,119418,952503,27,111505,25,465106,60.0165,3.17
+grande,grande_06,7,16,0,28,ponderado,bfs,—,ok,100,28,19760,205457,6565,0,0,,3.8795,9.311
+grande,grande_06,7,16,0,28,ponderado,dfs,—,falhou (tempo),,,323024,2594202,51,0,0,,60.0005,0.067
+grande,grande_06,7,16,0,28,ponderado,ids,—,falhou (tempo),,,451629,2137552,13,451508,13,,60.0109,0.066
+grande,grande_06,7,16,0,28,ponderado,ucs,—,ok,91,28,18264,179844,5318,0,0,,2.7807,8.468
+grande,grande_06,7,16,0,28,ponderado,gulosa,h1,ok,159,44,50928,575158,13017,0,0,,9.9388,21.912
+grande,grande_06,7,16,0,28,ponderado,gulosa,h2,ok,119,34,32163,360466,10680,0,0,,7.017,15.664
+grande,grande_06,7,16,0,28,ponderado,astar,h0,ok,91,28,18264,179844,5318,0,0,,3.2278,10.166
+grande,grande_06,7,16,0,28,ponderado,astar,h1,ok,91,28,16930,166038,5582,0,0,,3.1772,10.35
+grande,grande_06,7,16,0,28,ponderado,astar,h2,ok,91,28,15404,149360,5151,0,0,,3.2659,8.051
+grande,grande_06,7,16,0,28,ponderado,astar,h3,ok,91,28,15770,153281,5065,0,0,,3.2425,8.087
+grande,grande_06,7,16,0,28,ponderado,astar,h4,ok,91,30,8714,79345,3261,0,0,,2.077,5.525
+grande,grande_06,7,16,0,28,ponderado,idastar_simples,h4,falhou (tempo),,,203647,951597,18,203583,21,0,60.0253,0.064
+grande,grande_06,7,16,0,28,ponderado,idastar,h4,falhou (tempo),,,109813,810890,35,106665,56,361633,60.0133,1.352
+grande,grande_07,7,16,3,23,movimentos,bfs,—,ok,23,23,155947,2132531,20404,0,0,,27.9687,42.046
+grande,grande_07,7,16,3,23,movimentos,dfs,—,falhou (tempo),,,258029,2928811,51,0,0,,60.0058,0.085
+grande,grande_07,7,16,3,23,movimentos,ids,—,falhou (tempo),,,320204,3542572,8,318651,8,,60.0022,0.414
+grande,grande_07,7,16,3,23,movimentos,ucs,—,ok,23,23,171515,2358715,20404,0,0,,33.1115,59.412
+grande,grande_07,7,16,3,23,movimentos,gulosa,h1,ok,26,26,7444,91926,9242,0,0,,1.9585,7.491
+grande,grande_07,7,16,3,23,movimentos,gulosa,h2,ok,34,34,17456,245070,27170,0,0,,6.2086,20.306
+grande,grande_07,7,16,3,23,movimentos,astar,h0,ok,23,23,171515,2358715,20404,0,0,,39.5688,71.088
+grande,grande_07,7,16,3,23,movimentos,astar,h1,ok,23,23,141251,1929598,31853,0,0,,38.6188,53.039
+grande,grande_07,7,16,3,23,movimentos,astar,h2,ok,23,23,131306,1805973,35001,13,0,,40.3354,56.641
+grande,grande_07,7,16,3,23,movimentos,astar,h3,ok,23,23,135413,1853074,31853,0,0,,34.1515,53.039
+grande,grande_07,7,16,3,23,movimentos,astar,h4,ok,23,23,135413,1853074,31853,0,0,,36.7743,53.039
+grande,grande_07,7,16,3,23,movimentos,idastar_simples,h4,falhou (tempo),,,81847,895929,9,81105,6,0,60.0059,0.207
+grande,grande_07,7,16,3,23,movimentos,idastar,h4,falhou (tempo),,,69570,887153,14,52525,10,308786,60.0095,5.628
+grande,grande_07,7,16,3,23,ponderado,bfs,—,ok,84,23,155947,2132531,20404,0,0,,27.5016,42.046
+grande,grande_07,7,16,3,23,ponderado,dfs,—,falhou (tempo),,,260096,2952096,51,0,0,,60.0041,0.085
+grande,grande_07,7,16,3,23,ponderado,ids,—,falhou (tempo),,,323329,3578278,8,321772,8,,60.0025,0.415
+grande,grande_07,7,16,3,23,ponderado,ucs,—,ok,79,26,157006,2134617,20249,0,0,,31.068,57.016
+grande,grande_07,7,16,3,23,ponderado,gulosa,h1,ok,79,26,7444,91926,9242,0,0,,1.7148,7.491
+grande,grande_07,7,16,3,23,ponderado,gulosa,h2,ok,100,34,17464,245186,26837,0,0,,5.6645,20.138
+grande,grande_07,7,16,3,23,ponderado,astar,h0,ok,79,26,157006,2134617,20249,0,0,,32.2006,68.689
+grande,grande_07,7,16,3,23,ponderado,astar,h1,ok,79,26,150378,2042501,20623,0,0,,34.9786,50.431
+grande,grande_07,7,16,3,23,ponderado,astar,h2,ok,79,25,146872,1995443,20905,0,0,,39.2356,48.429
+grande,grande_07,7,16,3,23,ponderado,astar,h3,ok,79,26,147316,2000382,20623,0,0,,33.9328,48.41
+grande,grande_07,7,16,3,23,ponderado,astar,h4,ok,79,28,134868,1841193,23674,0,0,,35.7585,47.925
+grande,grande_07,7,16,3,23,ponderado,idastar_simples,h4,falhou (tempo),,,77938,861724,10,77442,10,0,60.0012,0.171
+grande,grande_07,7,16,3,23,ponderado,idastar,h4,falhou (tempo),,,66855,794014,18,58922,23,297551,60.0162,3.304
+grande,grande_08,8,20,2,39,movimentos,bfs,—,ok,39,39,38787,404677,2911,0,0,,6.4742,10.421
+grande,grande_08,8,20,2,39,movimentos,dfs,—,falhou (tempo),,,242575,2523887,51,0,0,,60.0003,0.091
+grande,grande_08,8,20,2,39,movimentos,ids,—,falhou (tempo),,,301788,2968702,9,300173,9,,60.0032,0.479
+grande,grande_08,8,20,2,39,movimentos,ucs,—,ok,39,39,39732,415334,2911,0,0,,7.1178,12.3
+grande,grande_08,8,20,2,39,movimentos,gulosa,h1,ok,45,45,37003,385867,11357,0,0,,7.8124,16.271
+grande,grande_08,8,20,2,39,movimentos,gulosa,h2,ok,44,44,35151,367283,11600,0,0,,8.9026,16.615
+grande,grande_08,8,20,2,39,movimentos,astar,h0,ok,39,39,39732,415334,2911,0,0,,7.4633,13.727
+grande,grande_08,8,20,2,39,movimentos,astar,h1,ok,39,39,38402,400631,4650,0,0,,8.3684,15.549
+grande,grande_08,8,20,2,39,movimentos,astar,h2,ok,39,39,38148,397982,4921,8,0,,9.4516,15.922
+grande,grande_08,8,20,2,39,movimentos,astar,h3,ok,39,39,38237,398851,4650,0,0,,8.738,15.549
+grande,grande_08,8,20,2,39,movimentos,astar,h4,ok,39,39,38237,398851,4650,0,0,,9.4922,15.549
+grande,grande_08,8,20,2,39,movimentos,idastar_simples,h4,falhou (tempo),,,94546,974140,9,93614,6,0,60.0079,0.274
+grande,grande_08,8,20,2,39,movimentos,idastar,h4,falhou (tempo),,,87160,878523,15,76457,12,402535,60.0003,4.671
+grande,grande_08,8,20,2,39,ponderado,bfs,—,ok,156,39,38787,404677,2911,0,0,,6.5057,10.421
+grande,grande_08,8,20,2,39,ponderado,dfs,—,falhou (tempo),,,239970,2496880,51,0,0,,60.0035,0.091
+grande,grande_08,8,20,2,39,ponderado,ids,—,falhou (tempo),,,298342,2935654,9,296727,9,,60.003,0.479
+grande,grande_08,8,20,2,39,ponderado,ucs,—,ok,156,42,50669,542966,7911,0,0,,9.5123,19.92
+grande,grande_08,8,20,2,39,ponderado,gulosa,h1,ok,160,46,37003,385867,10990,0,0,,7.6688,15.813
+grande,grande_08,8,20,2,39,ponderado,gulosa,h2,ok,160,46,35150,367278,11181,0,0,,8.6071,16.168
+grande,grande_08,8,20,2,39,ponderado,astar,h0,ok,156,42,50669,542966,7911,0,0,,9.543,23.144
+grande,grande_08,8,20,2,39,ponderado,astar,h1,ok,156,44,48616,519151,7258,0,0,,10.8689,22.144
+grande,grande_08,8,20,2,39,ponderado,astar,h2,ok,156,45,47202,503640,7642,0,0,,12.8785,21.834
+grande,grande_08,8,20,2,39,ponderado,astar,h3,ok,156,44,47277,503044,6619,0,0,,11.4687,21.376
+grande,grande_08,8,20,2,39,ponderado,astar,h4,ok,156,44,38415,400627,3446,0,0,,9.5392,13.948
+grande,grande_08,8,20,2,39,ponderado,idastar_simples,h4,falhou (tempo),,,100149,982521,11,99725,10,0,60.0128,0.175
+grande,grande_08,8,20,2,39,ponderado,idastar,h4,falhou (tempo),,,86355,847230,19,80586,26,374601,60.0153,3.077
+grande,grande_09,8,20,0,21,movimentos,bfs,—,ok,21,21,171075,2725931,18524,0,0,,36.223,51.522
+grande,grande_09,8,20,0,21,movimentos,dfs,—,falhou (tempo),,,216114,3067732,51,0,0,,60.0017,0.105
+grande,grande_09,8,20,0,21,movimentos,ids,—,falhou (tempo),,,287428,3415769,8,285644,8,,60.0026,0.51
+grande,grande_09,8,20,0,21,movimentos,ucs,—,ok,21,21,177730,2819645,18524,0,0,,40.3222,63.669
+grande,grande_09,8,20,0,21,movimentos,gulosa,h1,ok,22,22,56174,901941,43788,0,0,,15.8798,47.171
+grande,grande_09,8,20,0,21,movimentos,gulosa,h2,ok,25,25,52619,844452,44932,0,0,,16.8755,46.793
+grande,grande_09,8,20,0,21,movimentos,astar,h0,ok,21,21,177730,2819645,18524,0,0,,41.8168,74.436
+grande,grande_09,8,20,0,21,movimentos,astar,h1,ok,21,21,164984,2638820,31952,0,0,,43.733,71.187
+grande,grande_09,8,20,0,21,movimentos,astar,h2,ok,21,21,147662,2373536,39684,0,0,,44.1447,72.511
+grande,grande_09,8,20,0,21,movimentos,astar,h3,ok,21,21,151575,2432591,31952,0,0,,40.2296,66.727
+grande,grande_09,8,20,0,21,movimentos,astar,h4,ok,21,21,151575,2432591,31952,0,0,,43.852,66.727
+grande,grande_09,8,20,0,21,movimentos,idastar_simples,h4,falhou (tempo),,,72861,936375,9,71218,6,0,60.0028,0.516
+grande,grande_09,8,20,0,21,movimentos,idastar,h4,falhou (tempo),,,64342,921835,13,49188,10,311467,60.0091,5.761
+grande,grande_09,8,20,0,21,ponderado,bfs,—,ok,65,21,171075,2725931,18524,0,0,,36.5398,51.522
+grande,grande_09,8,20,0,21,ponderado,dfs,—,falhou (tempo),,,216241,3069423,51,0,0,,60.0059,0.105
+grande,grande_09,8,20,0,21,ponderado,ids,—,falhou (tempo),,,292158,3468728,8,290374,8,,60.0032,0.51
+grande,grande_09,8,20,0,21,ponderado,ucs,—,ok,65,22,155973,2494282,24843,0,0,,35.9414,48.297
+grande,grande_09,8,20,0,21,ponderado,gulosa,h1,ok,65,22,56174,901941,43788,0,0,,15.5007,47.171
+grande,grande_09,8,20,0,21,ponderado,gulosa,h2,ok,69,25,52619,844452,44932,0,0,,16.3891,46.793
+grande,grande_09,8,20,0,21,ponderado,astar,h0,ok,65,22,155973,2494282,24843,0,0,,36.9085,54.572
+grande,grande_09,8,20,0,21,ponderado,astar,h1,ok,65,22,150352,2407682,25630,0,0,,39.8497,54.322
+grande,grande_09,8,20,0,21,ponderado,astar,h2,ok,65,22,147110,2357223,26101,0,0,,42.6799,54.405
+grande,grande_09,8,20,0,21,ponderado,astar,h3,ok,65,22,147207,2358557,25630,0,0,,40.3035,54.322
+grande,grande_09,8,20,0,21,ponderado,astar,h4,ok,65,23,134779,2164134,30023,0,0,,41.2117,57.081
+grande,grande_09,8,20,0,21,ponderado,idastar_simples,h4,falhou (tempo),,,70912,791275,9,70250,14,0,60.0129,0.219
+grande,grande_09,8,20,0,21,ponderado,idastar,h4,falhou (tempo),,,60870,805913,17,53607,25,277536,60.0129,3.344
+grande,grande_10,8,20,0,26,movimentos,bfs,—,ok,26,26,20490,237093,8004,0,0,,3.5854,10.668
+grande,grande_10,8,20,0,26,movimentos,dfs,—,falhou (tempo),,,293081,2263804,51,0,0,,60.0055,0.073
+grande,grande_10,8,20,0,26,movimentos,ids,—,falhou (tempo),,,350289,2639532,11,349794,11,,60.0048,0.165
+grande,grande_10,8,20,0,26,movimentos,ucs,—,ok,26,26,28424,339258,10801,0,0,,5.5766,16.206
+grande,grande_10,8,20,0,26,movimentos,gulosa,h1,ok,30,30,3767,34142,1199,0,0,,0.7485,1.859
+grande,grande_10,8,20,0,26,movimentos,gulosa,h2,ok,32,32,3201,28851,876,0,0,,0.6817,1.496
+grande,grande_10,8,20,0,26,movimentos,astar,h0,ok,26,26,28424,339258,10801,0,0,,5.5632,18.44
+grande,grande_10,8,20,0,26,movimentos,astar,h1,ok,26,26,13974,156005,7676,0,0,,3.2192,10.28
+grande,grande_10,8,20,0,26,movimentos,astar,h2,ok,26,26,6812,69951,5377,0,0,,1.7215,6.161
+grande,grande_10,8,20,0,26,movimentos,astar,h3,ok,26,26,9667,102749,5259,0,0,,2.1714,7.488
+grande,grande_10,8,20,0,26,movimentos,astar,h4,ok,26,26,9667,102749,5259,0,0,,2.3772,7.488
+grande,grande_10,8,20,0,26,movimentos,idastar_simples,h4,falhou (tempo),,,135826,1008781,11,135461,9,0,60.016,0.151
+grande,grande_10,8,20,0,26,movimentos,idastar,h4,falhou (tempo),,,110806,972245,22,107313,20,555751,60.0069,1.684
+grande,grande_10,8,20,0,26,ponderado,bfs,—,ok,104,26,20490,237093,8004,0,0,,3.8142,10.668
+grande,grande_10,8,20,0,26,ponderado,dfs,—,falhou (tempo),,,279144,2152462,51,0,0,,60.0092,0.073
+grande,grande_10,8,20,0,26,ponderado,ids,—,falhou (tempo),,,351355,2647614,11,350860,11,,60.0012,0.166
+grande,grande_10,8,20,0,26,ponderado,ucs,—,ok,104,26,45177,551907,12295,0,0,,8.6468,22.386
+grande,grande_10,8,20,0,26,ponderado,gulosa,h1,ok,108,32,3779,34266,1199,0,0,,0.738,1.843
+grande,grande_10,8,20,0,26,ponderado,gulosa,h2,ok,108,34,3177,28675,864,0,0,,0.7008,1.485
+grande,grande_10,8,20,0,26,ponderado,astar,h0,ok,104,26,45177,551907,12295,0,0,,9.3975,26.011
+grande,grande_10,8,20,0,26,ponderado,astar,h1,ok,104,26,39906,485331,12227,0,0,,9.9217,24.576
+grande,grande_10,8,20,0,26,ponderado,astar,h2,ok,104,27,36335,441632,12125,0,0,,9.7514,23.608
+grande,grande_10,8,20,0,26,ponderado,astar,h3,ok,104,26,37567,454984,12079,0,0,,8.8103,23.877
+grande,grande_10,8,20,0,26,ponderado,astar,h4,ok,104,31,13299,144297,5476,0,0,,3.3262,8.464
+grande,grande_10,8,20,0,26,ponderado,idastar_simples,h4,falhou (tempo),,,139995,980960,12,139797,19,0,60.0299,0.096
+grande,grande_10,8,20,0,26,ponderado,idastar,h4,falhou (tempo),,,112163,942916,26,109652,48,484684,60.0167,1.266

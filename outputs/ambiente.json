@@ -1,0 +1,7 @@
+{
+ "python": "3.14.4",
+ "sistema": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+ "processador": "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz",
+ "cpus": 8,
+ "ram_gb": 14.8
+}

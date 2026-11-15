@@ -1,53 +1,66 @@
-# Projecto IA I - Grupo 06
+# Projecto IA I — Grupo 06 (Laboral)
 
-Implementação do problema P6, “Engarrafamento na Baixa” (Rush Hour generalizado), para o Projecto Prático de Inteligência Artificial I 2026.
+**P6 — “Engarrafamento na Baixa” (Rush Hour generalizado)**, com IDA* e tabela de transposição como algoritmo avançado.
+Membros: Falaque, Dalton; Nhabinde, Alex; Nhabomba, Lino; Quive, Alexandre; Ricardo.
+Semente do grupo: **202606**.
 
-## Preparar o ambiente
+## Instalação
 
-- Python 3.10 ou superior.
-- Para executar testes: `python -m pip install -r requirements.txt`.
-- Clonar o repositório partilhado e criar um ramo para cada tarefa.
+Requer Python 3.10 ou superior.
 
-```powershell
-git clone <URL_DO_REPOSITORIO>
-cd projecto-ia-grupo06
-git switch -c feature/nome/tarefa
+```sh
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m pip install -r requirements.txt
 ```
+
+## Execução
+
+```sh
+python main.py                                            # menu interactivo
+python main.py --alg astar --h h4 --criterio ponderado    # A* na instância base, passo a passo
+python main.py --alg astar --h h4 --pausa 1 --animar      # animação: 1 s por passo, a cores
+python main.py --instancia instancias/media_04.json --alg idastar --h h4 --sem-passos
+python main.py --gerar pequena --alg bfs                  # gera uma instância com a semente e resolve-a
+
+python -m pytest -q                                       # testes
+python gerador.py --nivel todos                           # regenera instancias/{pequena,media,grande}_NN.json
+python experiencias.py --workers 2                        # bateria completa (cerca de 2 h), CSV e gráficos
+python experiencias.py --so-graficos                      # refaz resumos e gráficos a partir do CSV
+python relatorio/gerar_relatorio.py                       # relatório .docx a partir dos resultados
+```
+
+Algoritmos (`--alg`): `bfs`, `dfs`, `ids`, `ucs`, `gulosa`, `astar`, `idastar` (com tabela de transposição) e `idastar_simples`.
+Heurísticas (`--h`): `h0` (zero), `h1` (veículos a bloquear X), `h2` (h1 + bloqueadores dos bloqueadores), `h3` (h1 + movimento final de X) e `h4` (relaxação com cada veículo sozinho).
+Visualização: o X aparece a vermelho, o veículo que acabou de mexer a amarelo, os camiões em negrito e os obstáculos `#` a cinzento. `--pausa S` espera S segundos entre passos; `--animar` limpa o ecrã a cada passo; `--sem-cor` desliga as cores.
+Critérios (`--criterio`): `movimentos` (cada movimento custa 1) e `ponderado` (comprimento × casas).
 
 ## Estrutura
 
 ```text
-dominio.py          # representação e regras do P6
-problema.py         # interface Problema, No e caminho
-buscas.py           # BFS, DFS, IDS, UCS, Gulosa, A* e IDA*
-heuristicas.py      # heurísticas, provas e apoio
-gerador.py          # instâncias reproduzíveis (semente do Grupo 06: 202606)
-experiencias.py     # experiências, métricas, CSV e gráficos
+problema.py         # classe abstracta Problema, No e caminho()
+dominio.py          # RushHour(Problema): estado, acções, transição, custos e objectivo
+buscas.py           # BFS, DFS, IDS, UCS, Gulosa, A*, IDA* (+ tabela de transposição)
+heuristicas.py      # h0–h4, h* exacto, verificação de admissibilidade/consistência, b*
+gerador.py          # instâncias por busca para trás a partir de objectivos (semente 202606)
+experiencias.py     # bateria (60 s / 2 GB por execução), CSV, resumos e gráficos
 main.py             # menu e demonstração
-instancias/         # puzzles JSON
+instancias/         # base.json + 10 pequenas, 10 médias e 10 grandes
 tests/              # testes pytest
-outputs/            # relatório, resultados e gráficos da entrega
+relatorio/          # template oficial e gerador do relatório
+outputs/            # resultados.csv, resumo_*.csv, heuristicas.csv, gráficos, relatório
 ```
+
+## Convenções (ver `CONTRATO_DOMINIO.md`)
+
+- Coordenadas começam em zero. O estado é um tuplo com a posição de cada veículo, pela ordem do JSON: a coluna esquerda nos horizontais e a linha de cima nos verticais.
+- Um movimento desloca um veículo k ≥ 1 casas livres. O objectivo é a casa direita de X atingir a borda direita da linha de saída.
+- Instância base: 1079 estados alcançáveis. Óptimo de 8 movimentos ou custo ponderado 40; os dois critérios coincidem.
+
+## Resultados principais
+
+Ver `outputs/analise_base.txt`, `outputs/resumo_<nivel>_<criterio>.csv`, `outputs/heuristicas.csv`, `outputs/divergencia_criterios.csv`, `outputs/verificacao_heuristicas.csv` e `outputs/graficos/`.
 
 ## Colaboração
 
-Seguir `CONTRIBUTING.md` e o sprint em `outputs/Grupo_06_Sprint_Scrum_6_Dias.pdf`. Actualizar o quadro `outputs/Grupo_06_Quadro_Sprint.xlsx` no daily. Cada pessoa trabalha num ramo próprio; integrar alterações na `main` após revisão de outro membro. Não fazer push directamente para `main`.
-
-## Enunciado e critérios
-
-O problema é P6. A especificação oficial define os sete algoritmos, o IDA* com tabela de transposição, as duas funções de custo, heurísticas, gerador, experiências e entregáveis. Antes de implementar, acordar em equipa as convenções de saída do chapa e o que conta como um movimento, e registar essa decisão.
-
-## Estado
-
-Este repositório contém os materiais de planeamento, a implementação do domínio P6 (`dominio.py`), a interface do problema e os nós de pesquisa (`problema.py`), a instância base (`instancias/base.json`) e os testes do domínio (`tests/test_dominio.py`). As convenções e dependências estão documentadas em [CONTRATO_DOMINIO.md](CONTRATO_DOMINIO.md), com aprovação colectiva e revisão por colega pendentes. Os restantes componentes da estrutura serão integrados progressivamente em ramos separados.
-
-## Domínio implementado por tarefas S02/S03/S09/S10
-Consultar CONTRATO_DOMINIO.md para convenções propostas e dependências.
-Executar a partir desta pasta:
-
-```sh
-python -m pytest -q
-python -c "from dominio import carregar_base; p=carregar_base(); print(p.estado_inicial()); print(p.accoes(p.estado_inicial()))"
-```
-
-As buscas, heurísticas h1/h2, menu e experiências aguardam os respectivos responsáveis.
+Seguir `CONTRIBUTING.md`: um ramo por tarefa e Pull Request para `main` após revisão.

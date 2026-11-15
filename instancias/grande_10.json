@@ -1,0 +1,153 @@
+{
+ "tamanho": 8,
+ "linha_saida": 1,
+ "obstaculos": [],
+ "veiculos": [
+  {
+   "id": "X",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 1,
+   "posicao": 0
+  },
+  {
+   "id": "A",
+   "orientacao": "H",
+   "comprimento": 3,
+   "fixa": 3,
+   "posicao": 1
+  },
+  {
+   "id": "B",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 5,
+   "posicao": 6
+  },
+  {
+   "id": "C",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 3,
+   "posicao": 5
+  },
+  {
+   "id": "D",
+   "orientacao": "H",
+   "comprimento": 3,
+   "fixa": 7,
+   "posicao": 5
+  },
+  {
+   "id": "E",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 2,
+   "posicao": 2
+  },
+  {
+   "id": "F",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 2,
+   "posicao": 5
+  },
+  {
+   "id": "G",
+   "orientacao": "V",
+   "comprimento": 3,
+   "fixa": 4,
+   "posicao": 1
+  },
+  {
+   "id": "H",
+   "orientacao": "H",
+   "comprimento": 3,
+   "fixa": 2,
+   "posicao": 5
+  },
+  {
+   "id": "I",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 4,
+   "posicao": 6
+  },
+  {
+   "id": "J",
+   "orientacao": "H",
+   "comprimento": 3,
+   "fixa": 0,
+   "posicao": 3
+  },
+  {
+   "id": "K",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 0,
+   "posicao": 6
+  },
+  {
+   "id": "L",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 4,
+   "posicao": 0
+  },
+  {
+   "id": "M",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 5,
+   "posicao": 4
+  },
+  {
+   "id": "N",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 6,
+   "posicao": 3
+  },
+  {
+   "id": "O",
+   "orientacao": "H",
+   "comprimento": 3,
+   "fixa": 7,
+   "posicao": 1
+  },
+  {
+   "id": "P",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 2,
+   "posicao": 0
+  },
+  {
+   "id": "Q",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 0,
+   "posicao": 2
+  },
+  {
+   "id": "R",
+   "orientacao": "H",
+   "comprimento": 3,
+   "fixa": 4,
+   "posicao": 2
+  },
+  {
+   "id": "S",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 7,
+   "posicao": 3
+  }
+ ],
+ "meta": {
+  "nivel": "grande",
+  "semente": 202606,
+  "optimo_movimentos": 26,
+  "estados_componente": 644457
+ }
+}

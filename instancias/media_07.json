@@ -1,0 +1,97 @@
+{
+ "tamanho": 6,
+ "linha_saida": 2,
+ "obstaculos": [],
+ "veiculos": [
+  {
+   "id": "X",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 2,
+   "posicao": 0
+  },
+  {
+   "id": "A",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 0,
+   "posicao": 3
+  },
+  {
+   "id": "B",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 4,
+   "posicao": 4
+  },
+  {
+   "id": "C",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 1,
+   "posicao": 1
+  },
+  {
+   "id": "D",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 1,
+   "posicao": 3
+  },
+  {
+   "id": "E",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 5,
+   "posicao": 3
+  },
+  {
+   "id": "F",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 0,
+   "posicao": 0
+  },
+  {
+   "id": "G",
+   "orientacao": "H",
+   "comprimento": 3,
+   "fixa": 4,
+   "posicao": 0
+  },
+  {
+   "id": "H",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 5,
+   "posicao": 2
+  },
+  {
+   "id": "I",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 2,
+   "posicao": 2
+  },
+  {
+   "id": "J",
+   "orientacao": "V",
+   "comprimento": 2,
+   "fixa": 3,
+   "posicao": 3
+  },
+  {
+   "id": "K",
+   "orientacao": "H",
+   "comprimento": 2,
+   "fixa": 0,
+   "posicao": 1
+  }
+ ],
+ "meta": {
+  "nivel": "media",
+  "semente": 202606,
+  "optimo_movimentos": 17,
+  "estados_componente": 31123
+ }
+}

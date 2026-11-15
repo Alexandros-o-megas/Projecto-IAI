@@ -24,3 +24,6 @@ desktop.ini
 *.bak
 outputs/*.inspect.ndjson
 work/
+
+# Perfil temporário do LibreOffice (conversão PDF)
+relatorio/lo_perfil/

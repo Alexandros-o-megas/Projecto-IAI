@@ -1,0 +1,27 @@
+[movimentos] estados alcançáveis: 1079; objectivos alcançáveis: 4; transições: 11714; custo óptimo: 8
+  bfs              —   estado=ok         custo=8 movimentos=8 expandidos=980 (90.8% dos estados) gerados=10873
+  ucs              —   estado=ok         custo=8 movimentos=8 expandidos=1057 (98.0% dos estados) gerados=11571
+  astar            h0  estado=ok         custo=8 movimentos=8 expandidos=1057 (98.0% dos estados) gerados=11571
+  astar            h1  estado=ok         custo=8 movimentos=8 expandidos=783 (72.6% dos estados) gerados=8692
+  astar            h2  estado=ok         custo=8 movimentos=8 expandidos=357 (33.1% dos estados) gerados=4040
+  astar            h3  estado=ok         custo=8 movimentos=8 expandidos=530 (49.1% dos estados) gerados=5915
+  astar            h4  estado=ok         custo=8 movimentos=8 expandidos=530 (49.1% dos estados) gerados=5915
+  idastar_simples  h2  estado=ok         custo=8 movimentos=8 expandidos=11240 (1041.7% dos estados) gerados=131224
+  idastar          h2  estado=ok         custo=8 movimentos=8 expandidos=740 (68.6% dos estados) gerados=8432
+  idastar_simples  h4  estado=ok         custo=8 movimentos=8 expandidos=41423 (3839.0% dos estados) gerados=468942
+  idastar          h4  estado=ok         custo=8 movimentos=8 expandidos=1948 (180.5% dos estados) gerados=22024
+[ponderado] estados alcançáveis: 1079; objectivos alcançáveis: 4; transições: 11714; custo óptimo: 40
+  bfs              —   estado=ok         custo=40 movimentos=8 expandidos=980 (90.8% dos estados) gerados=10873
+  ucs              —   estado=ok         custo=40 movimentos=8 expandidos=1071 (99.3% dos estados) gerados=11683
+  astar            h0  estado=ok         custo=40 movimentos=8 expandidos=1071 (99.3% dos estados) gerados=11683
+  astar            h1  estado=ok         custo=40 movimentos=8 expandidos=1069 (99.1% dos estados) gerados=11668
+  astar            h2  estado=ok         custo=40 movimentos=8 expandidos=1069 (99.1% dos estados) gerados=11668
+  astar            h3  estado=ok         custo=40 movimentos=8 expandidos=1065 (98.7% dos estados) gerados=11632
+  astar            h4  estado=ok         custo=40 movimentos=11 expandidos=816 (75.6% dos estados) gerados=9111
+  idastar_simples  h2  estado=tempo      custo=None movimentos=None expandidos=385563 (35733.4% dos estados) gerados=4584934
+  idastar          h2  estado=ok         custo=40 movimentos=16 expandidos=62280 (5772.0% dos estados) gerados=695297
+  idastar_simples  h4  estado=tempo      custo=None movimentos=None expandidos=414840 (38446.7% dos estados) gerados=4678114
+  idastar          h4  estado=ok         custo=40 movimentos=16 expandidos=10994 (1018.9% dos estados) gerados=124272
+Solução BFS (mín. movimentos=8) tem custo ponderado 40; óptimo ponderado (UCS) = 40 com 8 movimentos -> coincidem.
+Solução óptima (movimentos): A+1 C-3 O+3 P-1 B-1 R-2 Q+2 X+3
+Solução óptima (ponderado):  A+1 P-1 B-1 C-3 R-2 Q+2 O+3 X+3

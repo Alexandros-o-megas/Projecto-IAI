@@ -1,9 +1,10 @@
 """Menu do P6 — Engarrafamento na Baixa (Rush Hour generalizado), Grupo 06.
 
-Modo interactivo:   python main.py
+Modo interactivo:   python main.py                  → abre a TUI ANSI Art
 Modo directo:       python main.py --instancia base --alg astar --h h4 --criterio ponderado
                     python main.py --instancia instancias/media_03.json --alg idastar --h h4
                     python main.py --gerar grande --semente 202606 --alg astar --h h3
+Modo sem TUI:       python main.py --sem-tui         → menu de texto simples (legado)
 """
 import argparse
 import sys
@@ -211,11 +212,19 @@ def main():
                     help="segundos entre passos (animação), p.ex. --pausa 1")
     ap.add_argument("--animar", action="store_true", help="limpar o ecrã a cada passo (usar com --pausa)")
     ap.add_argument("--sem-cor", action="store_true", help="desligar as cores ANSI")
+    ap.add_argument("--sem-tui", action="store_true", help="usar o menu de texto simples (sem TUI ANSI)")
     a = ap.parse_args()
     if a.sem_cor:
         COR["ativo"] = False
     if a.alg is None:
-        menu()
+        if a.sem_tui:
+            menu()
+        else:
+            try:
+                from tui import menu_tui
+                menu_tui()
+            except ImportError:
+                menu()   # fallback: TUI não disponível
         return
     p = gerar(a.gerar, a.semente, a.criterio) if a.gerar else carregar(a.instancia, a.criterio)
     resolver(p, a.alg, a.h if a.alg in INFORMADOS else None, a.tempo, a.limite_dfs, not a.sem_passos,
